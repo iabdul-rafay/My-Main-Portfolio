@@ -3,7 +3,7 @@ cat > /mnt/user-data/outputs/README.md << 'EOF'
 
 > A modern, fully responsive personal portfolio website built with HTML5, CSS3, and JavaScript — showcasing Full-Stack Web Development, AI & Agentic AI, and Web3/Blockchain skills.
 
-![Portfolio Preview](img/hero.png)
+![Portfolio Preview](Screenshot.png)
 
 ---
 
