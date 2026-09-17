@@ -339,6 +339,37 @@
     </div>
     <!-- About Me Modal End -->
 
+    <!-- Project Details Modal Start -->
+    <div class="modal fade project-modal" id="projectModal" tabindex="-1" role="dialog"
+        aria-labelledby="projectModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div>
+                        <h5 class="modal-title" id="projectModalLabel">Project Details</h5>
+                        <span class="project-modal-category" id="projectModalCategory"></span>
+                    </div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p class="project-modal-description" id="projectModalDescription"></p>
+                    <div class="project-modal-section">
+                        <h6><i class="fa fa-layer-group"></i> Technology Stack</h6>
+                        <div class="modal-badge-list" id="projectModalStack"></div>
+                    </div>
+                    <div class="project-modal-section">
+                        <h6><i class="fa fa-tasks"></i> Project Highlights</h6>
+                        <ul class="project-modal-highlights" id="projectModalHighlights"></ul>
+                    </div>
+                </div>
+                <div class="modal-footer" id="projectModalLinks"></div>
+            </div>
+        </div>
+    </div>
+    <!-- Project Details Modal End -->
+
 
     <!-- Service Start -->
     <div class="service" id="service">
@@ -853,7 +884,7 @@
             <div class="row portfolio-container">
                 <!-- Featured Project 1: DocConnect -->
                 <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-web wow fadeInUp" data-wow-delay="0.0s">
-                    <div class="portfolio-wrap">
+                    <div class="portfolio-wrap project-trigger" data-project="docconnect" role="button" tabindex="0" aria-label="View DocConnect project details">
                         <div class="portfolio-img">
                             <img src="img/DocConnect.png" alt="DocConnect healthcare appointment platform">
                         </div>
@@ -872,7 +903,7 @@
 
                 <!-- Featured Project 2: Brew & Bloom -->
                 <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-web wow fadeInUp" data-wow-delay="0.2s">
-                    <div class="portfolio-wrap">
+                    <div class="portfolio-wrap project-trigger" data-project="brew-bloom" role="button" tabindex="0" aria-label="View Brew and Bloom project details">
                         <div class="portfolio-img">
                             <img src="img/Brew&Bloom_Coffeeshop.png" alt="Brew and Bloom coffee shop platform">
                         </div>
@@ -891,7 +922,7 @@
 
                 <!-- Featured Project 3: Khastech Solutions -->
                 <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-web wow fadeInUp" data-wow-delay="0.4s">
-                    <div class="portfolio-wrap">
+                    <div class="portfolio-wrap project-trigger" data-project="khastech" role="button" tabindex="0" aria-label="View Khastech Solutions project details">
                         <div class="portfolio-img">
                             <img src="img/khastech.com.png" alt="Khastech Solutions technology company website">
                         </div>
@@ -910,7 +941,7 @@
 
                 <!-- Featured Project 4: myVISTA -->
                 <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-ai wow fadeInUp" data-wow-delay="0.6s">
-                    <div class="portfolio-wrap">
+                    <div class="portfolio-wrap project-trigger" data-project="myvista" role="button" tabindex="0" aria-label="View myVISTA project details">
                         <div class="portfolio-img">
                             <img src="img/My_VISTA_.png" alt="myVISTA smart home mobile application">
                         </div>
@@ -928,7 +959,7 @@
 
                 <!-- Featured Project 5: Xaryab Mentorship -->
                 <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-web wow fadeInUp" data-wow-delay="0.8s">
-                    <div class="portfolio-wrap">
+                    <div class="portfolio-wrap project-trigger" data-project="xaryab" role="button" tabindex="0" aria-label="View Xaryab Mentorship project details">
                         <div class="portfolio-img">
                             <img src="img/xaryab_mentorship.png" alt="Xaryab Hashmi personal mentorship website">
                         </div>
@@ -946,7 +977,7 @@
 
                 <!-- Featured Project 6: AI Tax Portal -->
                 <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-ai wow fadeInUp" data-wow-delay="1.0s">
-                    <div class="portfolio-wrap">
+                    <div class="portfolio-wrap project-trigger" data-project="tax-portal" role="button" tabindex="0" aria-label="View AI Tax Portal project details">
                         <div class="portfolio-img">
                             <img src="img/ai_tax_portal.png" alt="AI Tax Portal dashboard">
                         </div>
@@ -965,7 +996,7 @@
 
                 <!-- Featured Project 7: Paws and Co. -->
                 <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-web wow fadeInUp" data-wow-delay="1.2s">
-                    <div class="portfolio-wrap">
+                    <div class="portfolio-wrap project-trigger" data-project="paws" role="button" tabindex="0" aria-label="View Paws and Co. project details">
                         <div class="portfolio-img">
                             <img src="img/PawsandCo..png" alt="Paws and Co. pet community platform">
                         </div>

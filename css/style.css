@@ -901,6 +901,15 @@ a:focus {
     width: 100%;
 }
 
+.portfolio .project-trigger {
+    cursor: pointer;
+}
+
+.portfolio .project-trigger:focus-visible {
+    outline: 3px solid #2b2d42;
+    outline-offset: 4px;
+}
+
 .portfolio .portfolio-img {
     position: relative;
     overflow: hidden;
@@ -971,6 +980,94 @@ a:focus {
     background: transparent;
     box-shadow: inset 0 0 0 0 #EF233C;
     border-color: #EF233C;
+}
+
+.project-modal .modal-content {
+    border: 0;
+    border-radius: 0;
+    overflow: hidden;
+}
+
+.project-modal .modal-header {
+    color: #ffffff;
+    background: #EF233C;
+    border-bottom: 0;
+    padding: 24px 30px;
+}
+
+.project-modal .modal-title {
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.project-modal .project-modal-category {
+    display: block;
+    margin-top: 4px;
+    color: rgba(255, 255, 255, .85);
+    font-size: 13px;
+}
+
+.project-modal .close {
+    color: #ffffff;
+    opacity: 1;
+    text-shadow: none;
+}
+
+.project-modal .modal-body {
+    padding: 30px;
+}
+
+.project-modal-description {
+    color: #555555;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.project-modal-section {
+    margin-top: 24px;
+}
+
+.project-modal-section h6 {
+    color: #2b2d42;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.project-modal-section h6 i {
+    color: #EF233C;
+    margin-right: 8px;
+}
+
+.project-modal .modal-badge-list {
+    gap: 8px;
+}
+
+.project-modal .modal-badge {
+    background: #fff1f3;
+    border: 1px solid #ffd3d9;
+    color: #c5162d;
+}
+
+.project-modal-highlights {
+    color: #555555;
+    line-height: 1.7;
+    margin: 0;
+    padding-left: 20px;
+}
+
+.project-modal .modal-footer {
+    border-top: 1px solid #eeeeee;
+    padding: 18px 30px;
+}
+
+@media (max-width: 575.98px) {
+    .project-modal .modal-header,
+    .project-modal .modal-body,
+    .project-modal .modal-footer {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
 }
 
 .portfolio-more {

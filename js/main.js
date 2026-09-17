@@ -168,6 +168,143 @@
     });
 
 
+    // Project details modal
+    var projectDetails = {
+        docconnect: {
+            title: "DocConnect",
+            category: "Live healthcare appointment platform",
+            description: "A healthcare platform that helps patients find doctors, review available services, and book appointments through a focused, easy-to-use experience.",
+            stack: ["MongoDB", "Express.js", "React.js", "Node.js", "REST APIs"],
+            highlights: ["Doctor and patient workflows", "Appointment discovery and booking", "Responsive MERN application"],
+            live: "https://doc-connect-self.vercel.app/",
+            github: "https://github.com/iabdul-rafay/Doc-Connect.git"
+        },
+        "brew-bloom": {
+            title: "Brew & Bloom",
+            category: "In-development coffee shop platform",
+            description: "A warm, modern coffee shop website designed to present the brand, menu, and customer experience through an engaging React interface.",
+            stack: ["React.js", "JavaScript", "HTML5", "CSS3", "Responsive UI"],
+            highlights: ["Coffee shop branding and menu presentation", "Responsive customer-facing interface", "Modern product-focused design"],
+            live: "https://brewandbloom-vert.vercel.app/",
+            github: "https://github.com/iabdul-rafay/Brew-Bloom-Coffee-Shop"
+        },
+        khastech: {
+            title: "Khastech Solutions",
+            category: "Technology company website",
+            description: "A professional technology services website built to present Khastech Solutions, its offerings, and its capabilities to prospective clients.",
+            stack: ["HTML5", "CSS3", "JavaScript", "Responsive Design"],
+            highlights: ["Service-focused company presentation", "Responsive business website", "Clear navigation and conversion paths"],
+            live: "https://khastech.com",
+            preview: "https://khastechcom.vercel.app/"
+        },
+        myvista: {
+            title: "myVISTA",
+            category: "FYP mobile application for smart home automation",
+            description: "A bilingual AI smart home controller that connects ESP32-based devices with a mobile experience for intelligent home automation and control.",
+            stack: ["Python", "AI / Machine Learning", "ESP32", "IoT", "Mobile Application", "TensorFlow Lite"],
+            highlights: ["Bilingual voice-enabled smart home control", "ESP32 hardware integration", "AI-assisted device automation"],
+            image: "img/My_VISTA_.png"
+        },
+        xaryab: {
+            title: "Xaryab Mentorship",
+            category: "Live private mentorship project",
+            description: "A personal mentorship website created to present Xaryab Hashmi's professional profile, experience, and mentorship journey in a polished online format.",
+            stack: ["React.js", "JavaScript", "HTML5", "CSS3", "Responsive Design"],
+            highlights: ["Personal brand and profile presentation", "Mentorship-focused content structure", "Responsive modern website"],
+            live: "https://xaryab-mentorship-ten.vercel.app/"
+        },
+        "tax-portal": {
+            title: "AI Tax Portal",
+            category: "Live AI dashboard",
+            description: "An AI-powered tax dashboard designed to organize tax information, surface useful insights, and present financial data through clear visual reporting.",
+            stack: ["React.js", "Node.js", "AI / Machine Learning", "Data Visualization", "REST APIs"],
+            highlights: ["Dashboard-based tax reporting", "Visual analytics and key metrics", "AI-assisted financial workflow"],
+            live: "https://ai-tax-portal.vercel.app/dashboard",
+            github: "https://github.com/iabdul-rafay/my-ai-tax-portal"
+        },
+        paws: {
+            title: "Paws and Co.",
+            category: "In-development pet community platform",
+            description: "A community platform for pet owners to connect, discover useful resources, and share experiences around the animals they care for.",
+            stack: ["React.js", "Node.js", "Express.js", "MongoDB", "REST APIs"],
+            highlights: ["Pet-focused community experience", "Responsive social platform interface", "Scalable full-stack foundation"],
+            live: "https://paws-and-co-swart.vercel.app/",
+            github: "https://github.com/iabdul-rafay/Paws-and-Co.-"
+        }
+    };
+
+    function openProjectModal(projectId) {
+        var project = projectDetails[projectId];
+        if (!project) return;
+
+        $("#projectModalLabel").text(project.title);
+        $("#projectModalCategory").text(project.category);
+        $("#projectModalDescription").text(project.description);
+        $("#projectModalStack").empty();
+        project.stack.forEach(function (technology) {
+            $("#projectModalStack").append($("<span>", {
+                class: "modal-badge",
+                text: technology
+            }));
+        });
+        $("#projectModalHighlights").empty();
+        project.highlights.forEach(function (highlight) {
+            $("#projectModalHighlights").append($("<li>", { text: highlight }));
+        });
+        $("#projectModalLinks").empty();
+
+        if (project.live) {
+            $("#projectModalLinks").append($("<a>", {
+                class: "btn mr-2",
+                href: project.live,
+                target: "_blank",
+                rel: "noopener",
+                html: '<i class="fa fa-external-link-alt mr-1"></i> Visit Project'
+            }));
+        }
+        if (project.preview) {
+            $("#projectModalLinks").append($("<a>", {
+                class: "btn mr-2",
+                href: project.preview,
+                target: "_blank",
+                rel: "noopener",
+                html: '<i class="fa fa-eye mr-1"></i> Preview'
+            }));
+        }
+        if (project.github) {
+            $("#projectModalLinks").append($("<a>", {
+                class: "btn mr-2",
+                href: project.github,
+                target: "_blank",
+                rel: "noopener",
+                html: '<i class="fab fa-github mr-1"></i> GitHub'
+            }));
+        }
+        if (project.image) {
+            $("#projectModalLinks").append($("<a>", {
+                class: "btn mr-2",
+                href: project.image,
+                target: "_blank",
+                rel: "noopener",
+                html: '<i class="fa fa-image mr-1"></i> View Image'
+            }));
+        }
+        $("#projectModal").modal("show");
+    }
+
+    $(document).on("click", ".project-trigger", function (event) {
+        if ($(event.target).closest("a").length) return;
+        openProjectModal($(this).data("project"));
+    });
+
+    $(document).on("keydown", ".project-trigger", function (event) {
+        if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            openProjectModal($(this).data("project"));
+        }
+    });
+
+
 
     // Portfolio filter
     var portfolioIsotope = $('.portfolio-container').isotope({
