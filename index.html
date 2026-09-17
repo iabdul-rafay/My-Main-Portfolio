@@ -43,7 +43,7 @@
                     <a href="#experience" class="nav-item nav-link">Experience</a>
                     <a href="#tech-stack" class="nav-item nav-link">Tech Stack</a>
                     <a href="#portfolio" class="nav-item nav-link">Projects</a>
-                    <a href="#review" class="nav-item nav-link">Quotes</a>
+
                     <a href="#certificates" class="nav-item nav-link">Certificates</a>
                     <a href="#blog" class="nav-item nav-link">Blog</a>
                     <a href="#contact" class="nav-item nav-link">Contact</a>
@@ -70,6 +70,7 @@
                         <div class="hero-btn">
                             <a class="btn" href="mailto:iamrafay64@gmail.com"><i class="fa fa-envelope mr-1"></i> Hire
                                 Me</a>
+                            <a class="btn btn-upwork" href="https://www.upwork.com/freelancers/~0103571b9de9fb4c9f?mp_source=share" target="_blank"><i class="fas fa-briefcase mr-1"></i> Upwork Profile</a>
                             <a class="btn" href="#contact"><i class="fa fa-paper-plane mr-1"></i> Contact Me</a>
                         </div>
                     </div>
@@ -155,9 +156,12 @@
                             <button type="button" class="btn" data-toggle="modal" data-target="#aboutModal">
                                 <i class="fa fa-info-circle mr-1"></i> Learn More
                             </button>
-                            <a class="btn" href="Abdul_Rafay_Resume_.pdf" download
+                            <a class="btn" href="cv.html"
                                 style="background: #2b2d42; box-shadow: inset 0 0 0 50px #2b2d42;">
-                                <i class="fa fa-download mr-1"></i> Download CV
+                                <i class="fa fa-file-alt mr-1"></i> View CV
+                            </a>
+                            <a class="btn btn-upwork" href="https://www.upwork.com/freelancers/~0103571b9de9fb4c9f?mp_source=share" target="_blank">
+                                <i class="fas fa-briefcase mr-1"></i> Hire on Upwork
                             </a>
                         </div>
                     </div>
@@ -181,15 +185,11 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <!-- Picture Placeholder Card: User can replace this with their actual image -->
+                    <!-- Profile Picture and Bio -->
                     <div class="row mb-4 align-items-center">
-                        <div class="col-md-5 mb-3 mb-md-0">
-                            <!-- PLACEHOLDER FOR YOUR PICTURE: Replace the div below with: <img src="img/about.jpg" alt="Abdul Rafay" class="img-fluid rounded"> -->
-                            <div class="about-modal-photo-placeholder">
-                                <i class="fa fa-camera placeholder-icon"></i>
-                                <h6>Your Picture Here</h6>
-                                <p>Place your image at <code>img/about.jpg</code> or replace this element with your
-                                    picture.</p>
+                        <div class="col-md-5 mb-3 mb-md-0 text-center">
+                            <div class="about-modal-img-wrap">
+                                <img src="img/about.png" alt="Abdul Rafay" class="img-fluid about-modal-img">
                             </div>
                         </div>
                         <div class="col-md-7">
@@ -223,11 +223,11 @@
                         <div class="mb-3 pl-2" style="border-left: 2px solid #EF233C;">
                             <div class="d-flex justify-content-between flex-wrap">
                                 <strong>BS Software Engineering</strong>
-                                <span class="text-muted" style="font-size: 13px;">2021 – 2025</span>
+                                <span class="text-muted" style="font-size: 13px;">2022 – 2026</span>
                             </div>
                             <p class="mb-1 text-danger" style="font-weight: 600; font-size: 14px;">Capital University of
                                 Science and Technology (CUST)</p>
-                            <p class="mb-0 text-muted" style="font-size: 13px;">CGPA: 2.79 / 4.00 | Graduated 2025 |
+                            <p class="mb-0 text-muted" style="font-size: 13px;">CGPA: 2.79 / 4.00 | Graduated 2026 |
                                 FYP: myVISTA – Bilingual AI Smart Home Controller</p>
                         </div>
                         <div class="mb-3 pl-2" style="border-left: 2px solid #ddd;">
@@ -316,12 +316,14 @@
                             class="text-primary mr-3" style="font-size: 18px;"><i class="fab fa-linkedin"></i></a>
                         <a href="https://x.com/iabdul_rafay" target="_blank" class="text-dark mr-3"
                             style="font-size: 18px;"><i class="fab fa-twitter"></i></a>
-                        <a href="https://www.instagram.com/iabdul.rafay7" target="_blank" class="text-danger"
+                        <a href="https://www.instagram.com/iabdul.rafay7" target="_blank" class="text-danger mr-3"
                             style="font-size: 18px;"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.upwork.com/freelancers/~0103571b9de9fb4c9f" target="_blank"
+                            style="font-size: 18px; color: #14a800;"><i class="fas fa-briefcase"></i></a>
                     </div>
                     <div>
-                        <a href="Abdul_Rafay_Resume_.pdf" download class="btn btn-sm mr-2" style="padding: 8px 16px;">
-                            <i class="fa fa-download mr-1"></i> Download CV
+                        <a href="cv.html" target="_blank" class="btn btn-sm mr-2" style="padding: 8px 16px;">
+                            <i class="fa fa-file-alt mr-1"></i> View CV
                         </a>
                         <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal"
                             style="padding: 8px 16px; background: #6c757d; border-color: #6c757d;">
@@ -415,65 +417,59 @@
             <div class="timeline">
                 <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s">
                     <div class="timeline-text">
-                        <div class="timeline-date">Sep 2024 – Jun 2025</div>
-                        <h2>Lead AI & Systems Engineer</h2>
-                        <h4>myVISTA – Bilingual AI Smart Home Controller (FYP, CUST)</h4>
-                        <p>
-                            Co-developed and delivered a bilingual (English/Urdu) voice-command smart-home controller
-                            with gesture controls within a 4-person Agile engineering team. Architected Firebase
-                            Realtime DB schema handling 200+ state events and integrated ESP32 microcontrollers via
-                            WebSocket.
-                        </p>
-                    </div>
-                </div>
-                <div class="timeline-item right wow slideInRight" data-wow-delay="0.1s">
-                    <div class="timeline-text">
-                        <div class="timeline-date">Mar 2025 – Jun 2025</div>
-                        <h2>Web3 Full-Stack Developer</h2>
-                        <h4>TB Company – NFT Marketplace</h4>
-                        <p>
-                            Built a full-stack NFT marketplace on Ethereum Sepolia testnet with MetaMask wallet
-                            integration, ERC-721 token minting/trading, Cloudinary media pipeline, and CoinGecko live
-                            price charts. Designed and deployed 3 Solidity smart contracts verified on Etherscan.
-                        </p>
-                    </div>
-                </div>
-                <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s">
-                    <div class="timeline-text">
-                        <div class="timeline-date">Oct 2024 – Jan 2025</div>
+                        <div class="timeline-date">June 2026 – Present</div>
                         <h2>MERN Stack Developer</h2>
-                        <h4>DocConnect – Healthcare Appointment Platform</h4>
-                        <p>
-                            Engineered a full-stack healthcare platform with appointment booking, JWT role-based
-                            authentication, admin dashboard, and 20+ REST API endpoints. Implemented responsive React.js
-                            UI with real-time status polling.
+                        <h4>Khastech Solutions</h4>
+                        <p style="font-size: 13.5px; font-weight: 600; color: #EF233C; margin-bottom: 8px;">
+                            MongoDB · Express.js · React.js · Node.js · Khastech Solutions
                         </p>
+                        <ul style="margin: 0; padding-left: 18px; font-size: 15px; color: #414141; line-height: 1.6;">
+                            <li>Building and maintaining full-stack web applications using the MERN stack for real-world client projects.</li>
+                            <li>Developing REST APIs, building React components, and integrating MongoDB databases for production systems.</li>
+                            <li>Collaborating with the team on agile-based development cycles, code reviews, and deployment workflows.</li>
+                        </ul>
                     </div>
                 </div>
                 <div class="timeline-item right wow slideInRight" data-wow-delay="0.1s">
                     <div class="timeline-text">
-                        <div class="timeline-date">Aug 2024 – Oct 2024</div>
-                        <h2>Machine Learning Developer</h2>
-                        <h4>MovieSent – ML Sentiment Analysis System</h4>
-                        <p>
-                            Trained an ML sentiment classifier on 25,000 IMDB movie reviews achieving 91% accuracy using
-                            TF-IDF and Logistic Regression. Deployed model as a Flask REST API with a responsive web
-                            interface for real-time inference.
+                        <div class="timeline-date">June 2025 – August 2025</div>
+                        <h2>Data Science & ML Intern</h2>
+                        <h4>Ezytech</h4>
+                        <p style="font-size: 13.5px; font-weight: 600; color: #EF233C; margin-bottom: 8px;">
+                            Python · Pandas · Scikit-learn · Data Analysis · Machine Learning
                         </p>
+                        <ul style="margin: 0; padding-left: 18px; font-size: 15px; color: #414141; line-height: 1.6;">
+                            <li>Worked on data preprocessing, exploratory data analysis, and building supervised ML models.</li>
+                            <li>Gained hands-on experience with Python-based data science tools in a professional environment.</li>
+                            <li>Contributed to model evaluation, feature engineering, and documentation of ML pipelines.</li>
+                        </ul>
                     </div>
                 </div>
                 <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s">
+                    <div class="timeline-text">
+                        <div class="timeline-date">Fall 2025</div>
+                        <h2>VIS / FOP</h2>
+                        <h4>Traffic Police Islamabad (with CTD)</h4>
+                        <p style="font-size: 13.5px; font-weight: 600; color: #EF233C; margin-bottom: 8px;">
+                            Traffic Police Islamabad · Counter Terrorism Department (CTD)
+                        </p>
+                        <ul style="margin: 0; padding-left: 18px; font-size: 15px; color: #414141; line-height: 1.6;">
+                            <li>Contributed to a technology-assisted traffic operations project under Traffic Police Islamabad.</li>
+                            <li>Also collaborated with the Counter Terrorism Department (CTD) during the same engagement period.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item right wow slideInRight" data-wow-delay="0.1s">
                     <div class="timeline-text">
                         <div class="timeline-date">2021 – 2025</div>
                         <h2>BS Software Engineering</h2>
                         <h4>Capital University of Science and Technology (CUST)</h4>
                         <p>
-                            Graduated with in-depth focus on Software Engineering, Data Structures & Algorithms,
-                            Distributed Systems, Web Technologies, Database Systems, and Artificial Intelligence.
+                            Graduated with CGPA: 2.79 / 4.00. FYP: myVISTA – Bilingual AI Smart Home Controller. In-depth focus on Software Engineering, Data Structures & Algorithms, Distributed Systems, Web Technologies, Database Systems, and Artificial Intelligence.
                         </p>
                     </div>
                 </div>
-                <div class="timeline-item right wow slideInRight" data-wow-delay="0.1s">
+                <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s">
                     <div class="timeline-text">
                         <div class="timeline-date">2020 – 2022</div>
                         <h2>ICS (Computer Science)</h2>
@@ -961,204 +957,308 @@
     <!-- Banner End -->
 
 
-    <!-- Quotes / Testimonial Start -->
-    <div class="testimonial wow fadeInUp" data-wow-delay="0.1s" id="review">
-        <div class="container">
-            <div class="section-header text-center" style="margin-bottom: 20px;">
-                <p style="color: #ffffff;">Inspiration</p>
-                <h2 style="color: #ffffff;">Quotes <span style="color: #2b2d42;">I Live</span> By</h2>
-            </div>
-            <div class="testimonial-icon">
-                <i class="fa fa-quote-left"></i>
-            </div>
-            <div class="owl-carousel testimonials-carousel">
-                <div class="testimonial-item">
-                    <div class="testimonial-text">
-                        <p class="quotes-text">
-                            "Talk is cheap. Show me the code."
-                        </p>
-                        <h3 class="quotes-author">Linus Torvalds</h3>
-                        <h4 class="quotes-title">Creator of Linux & Git</h4>
-                    </div>
-                </div>
-                <div class="testimonial-item">
-                    <div class="testimonial-text">
-                        <p class="quotes-text">
-                            "Any fool can write code that a computer can understand. Good programmers write code that
-                            humans can understand."
-                        </p>
-                        <h3 class="quotes-author">Martin Fowler</h3>
-                        <h4 class="quotes-title">Author & Chief Scientist at ThoughtWorks</h4>
-                    </div>
-                </div>
-                <div class="testimonial-item">
-                    <div class="testimonial-text">
-                        <p class="quotes-text">
-                            "Simplicity is prerequisite for reliability."
-                        </p>
-                        <h3 class="quotes-author">Edsger W. Dijkstra</h3>
-                        <h4 class="quotes-title">Turing Award Laureate & Computer Scientist</h4>
-                    </div>
-                </div>
-                <div class="testimonial-item">
-                    <div class="testimonial-text">
-                        <p class="quotes-text">
-                            "The best way to predict the future is to invent it."
-                        </p>
-                        <h3 class="quotes-author">Alan Kay</h3>
-                        <h4 class="quotes-title">Pioneer of GUI & Object-Oriented Programming</h4>
-                    </div>
-                </div>
-                <div class="testimonial-item">
-                    <div class="testimonial-text">
-                        <p class="quotes-text">
-                            "First, solve the problem. Then, write the code."
-                        </p>
-                        <h3 class="quotes-author">John Johnson</h3>
-                        <h4 class="quotes-title">Software Engineer & Architect</h4>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Quotes / Testimonial End -->
-
-
     <!-- Certificates Start -->
-    <div class="team" id="certificates">
+    <div class="cert-section" id="certificates">
         <div class="container">
             <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
-                <p>Honors & Credentials</p>
+                <p>Honors &amp; Credentials</p>
                 <h2>My <span>Certificates</span></h2>
             </div>
-            <div class="row">
-                <!-- Certificate 1: CUST Hackathon -->
-                <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.0s">
+
+            <!-- Slider Wrapper -->
+            <div class="cert-slider-wrapper wow fadeInUp" data-wow-delay="0.2s">
+
+                <!-- Custom Nav Buttons -->
+                <button class="cert-nav cert-prev" id="certPrev" aria-label="Previous certificate">
+                    <i class="fa fa-chevron-left"></i>
+                </button>
+                <button class="cert-nav cert-next" id="certNext" aria-label="Next certificate">
+                    <i class="fa fa-chevron-right"></i>
+                </button>
+
+                <!-- Owl Carousel -->
+                <div class="owl-carousel certificates-carousel">
+
+                <!-- Certificate 1: ISPR Internship -->
+
+                    <div class="cert-slide">
                     <div class="certificate-item">
                         <div class="certificate-img-container">
-                            <span class="certificate-badge">Completed (2024)</span>
-                            <!-- PLACEHOLDER FOR CERTIFICATE IMAGE: Replace the placeholder below with: <img src="img/cert-hackathon.jpg" alt="CUST Hackathon Certificate" class="img-fluid"> -->
-                            <div class="certificate-placeholder">
-                                <i class="fa fa-award"></i>
-                                <span>Certificate Image Placeholder</span>
-                                <small>Add image in <code>img/cert-hackathon.jpg</code></small>
-                            </div>
+                            <span class="certificate-badge">Completed (2026)</span>
+                            <img src="img/Certificatesimg/WhatsApp Image 2026-09-15 at 10.47.54 AM (1).jpeg" alt="ISPR Internship Certificate" class="img-fluid" style="width:100%;height:100%;object-fit:cover;">
+                                <div class="cert-img-overlay"><i class="fa fa-search-plus"></i></div>
                         </div>
                         <div class="certificate-body">
                             <div>
-                                <h3>CUST Hackathon 2024 — Participation Certificate</h3>
-                                <div class="issuer"><i class="fa fa-university mr-1"></i> Capital University of Science
-                                    and Technology (CUST)</div>
+                                <h3>ISPR — Internship Program</h3>
+                                <div class="issuer"><i class="fa fa-shield-alt mr-1"></i> Inter Services Public Relations (ISPR)</div>
                                 <p>
-                                    Recognized for rapid engineering prototyping, agile team collaboration, and
-                                    high-intensity problem solving in building smart software solutions.
+                                    Successfully completed the Internship Program at ISPR from 29 July 2026 to 4 September 2026, as a student of Capital University of Science and Technology.
+                                </p>
+                            </div>
+                            <div class="certificate-tags">
+                                <span class="certificate-tag">ISPR</span>
+                                <span class="certificate-tag">Internship</span>
+                                <span class="certificate-tag">CUST</span>
+                                <span class="certificate-tag">2026</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certificate 2: EZITECH Data Science Internship -->
+
+                    <div class="cert-slide">
+                    <div class="certificate-item">
+                        <div class="certificate-img-container">
+                            <span class="certificate-badge">Completed (2025)</span>
+                            <img src="img/Certificatesimg/WhatsApp Image 2026-09-15 at 10.47.53 AM (1).jpeg" alt="EZITECH Data Science Internship Certificate" class="img-fluid" style="width:100%;height:100%;object-fit:cover;">
+                                <div class="cert-img-overlay"><i class="fa fa-search-plus"></i></div>
+                        </div>
+                        <div class="certificate-body">
+                            <div>
+                                <h3>Internship in Data Science</h3>
+                                <div class="issuer"><i class="fa fa-university mr-1"></i> EZITECH Institute</div>
+                                <p>
+                                    Eight-week internship (16-Jul-2025 to 16-Sep-2025). Projects include MovieSent Sentiment Analysis, HomeChef AI-Powered Assistant, and Skin Cancer Classification with CNN.
+                                </p>
+                            </div>
+                            <div class="certificate-tags">
+                                <span class="certificate-tag">Data Science</span>
+                                <span class="certificate-tag">Machine Learning</span>
+                                <span class="certificate-tag">CNN</span>
+                                <span class="certificate-tag">AI</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certificate 3: CUST Hackathon 2026 Achievement -->
+
+                    <div class="cert-slide">
+                    <div class="certificate-item">
+                        <div class="certificate-img-container">
+                            <span class="certificate-badge">Completed (2026)</span>
+                            <img src="img/Certificatesimg/WhatsApp Image 2026-09-15 at 10.47.54 AM (2).jpeg" alt="CUST Hackathon 2026 Certificate of Achievement" class="img-fluid" style="width:100%;height:100%;object-fit:cover;">
+                                <div class="cert-img-overlay"><i class="fa fa-search-plus"></i></div>
+                        </div>
+                        <div class="certificate-body">
+                            <div>
+                                <h3>CUST Hackathon 2026 — Certificate of Achievement</h3>
+                                <div class="issuer"><i class="fa fa-trophy mr-1"></i> CAUSE Society / CUST Dept. of Software Engineering</div>
+                                <p>
+                                    Recognized for enthusiastic participation and commitment during CUST Hackathon 2026, held on 13 June 2026.
                                 </p>
                             </div>
                             <div class="certificate-tags">
                                 <span class="certificate-tag">Hackathon</span>
-                                <span class="certificate-tag">Agile Teamwork</span>
-                                <span class="certificate-tag">Rapid Prototyping</span>
+                                <span class="certificate-tag">Achievement</span>
+                                <span class="certificate-tag">CAUSE Society</span>
+                                <span class="certificate-tag">CUST</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Certificate 2: Python for Everybody -->
-                <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                <!-- Certificate 4: CUST Hackathon 2025 AI for Sustainable Future -->
+
+                    <div class="cert-slide">
+                    <div class="certificate-item">
+                        <div class="certificate-img-container">
+                            <span class="certificate-badge">Completed (2025)</span>
+                            <img src="img/Certificatesimg/WhatsApp Image 2026-09-15 at 10.47.55 AM.jpeg" alt="CUST Hackathon 2025 AI Certificate" class="img-fluid" style="width:100%;height:100%;object-fit:cover;">
+                                <div class="cert-img-overlay"><i class="fa fa-search-plus"></i></div>
+                        </div>
+                        <div class="certificate-body">
+                            <div>
+                                <h3>CUST Hackathon 2025 — AI for Sustainable Future</h3>
+                                <div class="issuer"><i class="fa fa-microchip mr-1"></i> AI Pakistan / CAUSE / CUST Faculty of Computing</div>
+                                <p>
+                                    Participation certificate for CUST Hackathon 2025 themed "AI for Sustainable Future", held on 17 May 2025.
+                                </p>
+                            </div>
+                            <div class="certificate-tags">
+                                <span class="certificate-tag">Hackathon</span>
+                                <span class="certificate-tag">Artificial Intelligence</span>
+                                <span class="certificate-tag">Sustainability</span>
+                                <span class="certificate-tag">CUST</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certificate 5: CTD ICTP Physical Training -->
+
+                    <div class="cert-slide">
+                    <div class="certificate-item">
+                        <div class="certificate-img-container">
+                            <span class="certificate-badge">Completed</span>
+                            <img src="img/Certificatesimg/WhatsApp Image 2026-09-15 at 10.47.52 AM.jpeg" alt="CTD ICTP Certificate of Participation" class="img-fluid" style="width:100%;height:100%;object-fit:cover;">
+                                <div class="cert-img-overlay"><i class="fa fa-search-plus"></i></div>
+                        </div>
+                        <div class="certificate-body">
+                            <div>
+                                <h3>CTD ICTP — Certificate of Participation</h3>
+                                <div class="issuer"><i class="fa fa-shield-alt mr-1"></i> Counter Terrorism Department ICTP, Islamabad Capital Territory Police</div>
+                                <p>
+                                    Recognized for dedication and commitment to physical training with law enforcement and active participation at CTD ICTP.
+                                </p>
+                            </div>
+                            <div class="certificate-tags">
+                                <span class="certificate-tag">Law Enforcement</span>
+                                <span class="certificate-tag">CTD</span>
+                                <span class="certificate-tag">Physical Training</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certificate 6: ITP VIPS/FOP Volunteer -->
+
+                    <div class="cert-slide">
+                    <div class="certificate-item">
+                        <div class="certificate-img-container">
+                            <span class="certificate-badge">Completed</span>
+                            <img src="img/Certificatesimg/WhatsApp Image 2026-09-15 at 10.47.54 AM.jpeg" alt="ITP VIPS FOP Volunteer Certificate" class="img-fluid" style="width:100%;height:100%;object-fit:cover;">
+                                <div class="cert-img-overlay"><i class="fa fa-search-plus"></i></div>
+                        </div>
+                        <div class="certificate-body">
+                            <div>
+                                <h3>Volunteer in Police Service — VIPS/FOP</h3>
+                                <div class="issuer"><i class="fa fa-user-shield mr-1"></i> Islamabad Traffic Police (ITP)</div>
+                                <p>
+                                    Recognized for dedicated service as a Volunteer in Police Services / Friends of Police, fostering community engagement and safety.
+                                </p>
+                            </div>
+                            <div class="certificate-tags">
+                                <span class="certificate-tag">Community Service</span>
+                                <span class="certificate-tag">VIPS/FOP</span>
+                                <span class="certificate-tag">ITP</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certificate 7: CAUSE Society Videography Team -->
+
+                    <div class="cert-slide">
+                    <div class="certificate-item">
+                        <div class="certificate-img-container">
+                            <span class="certificate-badge">Completed (2025)</span>
+                            <img src="img/Certificatesimg/WhatsApp Image 2026-09-15 at 10.47.53 AM.jpeg" alt="CAUSE Society Videography Team Certificate" class="img-fluid" style="width:100%;height:100%;object-fit:cover;">
+                                <div class="cert-img-overlay"><i class="fa fa-search-plus"></i></div>
+                        </div>
+                        <div class="certificate-body">
+                            <div>
+                                <h3>Certificate of Achievement — Videography Team Member</h3>
+                                <div class="issuer"><i class="fa fa-video mr-1"></i> CAUSE Society, CUST</div>
+                                <p>
+                                    Recognized for selection and commitment as a Member of the Videography Team during Term — Fall 2025.
+                                </p>
+                            </div>
+                            <div class="certificate-tags">
+                                <span class="certificate-tag">Videography</span>
+                                <span class="certificate-tag">CAUSE Society</span>
+                                <span class="certificate-tag">Achievement</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certificate 8: IEEE CUST AL-FUNOON GALA 2025 -->
+
+                    <div class="cert-slide">
+                    <div class="certificate-item">
+                        <div class="certificate-img-container">
+                            <span class="certificate-badge">Completed (2025)</span>
+                            <img src="img/Certificatesimg/WhatsApp Image 2026-09-15 at 10.47.52 AM (1).jpeg" alt="IEEE CUST AL-FUNOON GALA Certificate" class="img-fluid" style="width:100%;height:100%;object-fit:cover;">
+                                <div class="cert-img-overlay"><i class="fa fa-search-plus"></i></div>
+                        </div>
+                        <div class="certificate-body">
+                            <div>
+                                <h3>Certificate of Appreciation — AL-FUNOON GALA 2025</h3>
+                                <div class="issuer"><i class="fa fa-camera mr-1"></i> IEEE CUST Student Branch</div>
+                                <p>
+                                    Recognized as part of the Photography Team at IEEE CUST Student Branch AL-FUNOON GALA 2025, held on 16th June 2025.
+                                </p>
+                            </div>
+                            <div class="certificate-tags">
+                                <span class="certificate-tag">IEEE</span>
+                                <span class="certificate-tag">Photography</span>
+                                <span class="certificate-tag">CUST</span>
+                                <span class="certificate-tag">2025</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certificate 9: CUST Sports Week 2024 -->
+
+                    <div class="cert-slide">
                     <div class="certificate-item">
                         <div class="certificate-img-container">
                             <span class="certificate-badge">Completed (2024)</span>
-                            <!-- PLACEHOLDER FOR CERTIFICATE IMAGE: Replace the placeholder below with: <img src="img/cert-python.jpg" alt="Python for Everybody Certificate" class="img-fluid"> -->
-                            <div class="certificate-placeholder">
-                                <i class="fa fa-certificate"></i>
-                                <span>Certificate Image Placeholder</span>
-                                <small>Add image in <code>img/cert-python.jpg</code></small>
-                            </div>
+                            <img src="img/Certificatesimg/WhatsApp Image 2026-09-15 at 10.47.53 AM (2).jpeg" alt="CUST Sports Week 2024 Certificate" class="img-fluid" style="width:100%;height:100%;object-fit:cover;">
+                                <div class="cert-img-overlay"><i class="fa fa-search-plus"></i></div>
                         </div>
                         <div class="certificate-body">
                             <div>
-                                <h3>Python for Everybody — Specialization</h3>
-                                <div class="issuer"><i class="fa fa-university mr-1"></i> University of Michigan /
-                                    Coursera</div>
+                                <h3>Certificate of Appreciation — Sports Week 2024</h3>
+                                <div class="issuer"><i class="fa fa-running mr-1"></i> Capital University of Science and Technology (CUST)</div>
                                 <p>
-                                    In-depth mastery of Python programming, data structures, network programming with
-                                    RESTful APIs, web scraping, and database management.
+                                    Awarded for the successful execution of CUST Sports Week 2024 by the Director of Student Affairs.
                                 </p>
                             </div>
                             <div class="certificate-tags">
-                                <span class="certificate-tag">Python</span>
-                                <span class="certificate-tag">Data Structures</span>
-                                <span class="certificate-tag">REST APIs</span>
-                                <span class="certificate-tag">Coursera</span>
+                                <span class="certificate-tag">Sports</span>
+                                <span class="certificate-tag">Event Management</span>
+                                <span class="certificate-tag">CUST</span>
+                                <span class="certificate-tag">2024</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Certificate 3: Blockchain Fundamentals -->
-                <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+                <!-- Certificate 10: CUST Orientation Spring 2025 -->
+
+                    <div class="cert-slide">
                     <div class="certificate-item">
                         <div class="certificate-img-container">
-                            <span class="certificate-badge" style="background: #2b2d42;">In Progress (2025)</span>
-                            <!-- PLACEHOLDER FOR CERTIFICATE IMAGE: Replace the placeholder below with: <img src="img/cert-blockchain.jpg" alt="Blockchain Fundamentals Certificate" class="img-fluid"> -->
-                            <div class="certificate-placeholder">
-                                <i class="fa fa-cubes"></i>
-                                <span>Certificate Image Placeholder</span>
-                                <small>Add image in <code>img/cert-blockchain.jpg</code></small>
-                            </div>
+                            <span class="certificate-badge">Completed (2025)</span>
+                            <img src="img/Certificatesimg/WhatsApp Image 2026-09-15 at 10.47.55 AM (1).jpeg" alt="CUST Orientation Spring 2025 Certificate" class="img-fluid" style="width:100%;height:100%;object-fit:cover;">
+                                <div class="cert-img-overlay"><i class="fa fa-search-plus"></i></div>
                         </div>
                         <div class="certificate-body">
                             <div>
-                                <h3>Blockchain Fundamentals</h3>
-                                <div class="issuer"><i class="fa fa-university mr-1"></i> UC Berkeley / Coursera</div>
+                                <h3>Certificate of Appreciation — Orientation Spring 2025</h3>
+                                <div class="issuer"><i class="fa fa-university mr-1"></i> Capital University of Science and Technology (CUST)</div>
                                 <p>
-                                    Comprehensive study into distributed ledger architecture, cryptographic mechanisms,
-                                    consensus protocols, and Solidity smart contract verification.
+                                    Awarded to Mr. Abdul Rafay for the successful execution of Orientation Spring 2025, by the Director of Student Affairs.
                                 </p>
                             </div>
                             <div class="certificate-tags">
-                                <span class="certificate-tag">Blockchain</span>
-                                <span class="certificate-tag">Solidity</span>
-                                <span class="certificate-tag">Ethereum</span>
-                                <span class="certificate-tag">UC Berkeley</span>
+                                <span class="certificate-tag">Event Management</span>
+                                <span class="certificate-tag">Orientation</span>
+                                <span class="certificate-tag">CUST</span>
+                                <span class="certificate-tag">2025</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Certificate 4: React Developer Certificate -->
-                <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
-                    <div class="certificate-item">
-                        <div class="certificate-img-container">
-                            <span class="certificate-badge" style="background: #2b2d42;">In Progress (2025)</span>
-                            <!-- PLACEHOLDER FOR CERTIFICATE IMAGE: Replace the placeholder below with: <img src="img/cert-react.jpg" alt="Meta React Certificate" class="img-fluid"> -->
-                            <div class="certificate-placeholder">
-                                <i class="fa fa-laptop-code"></i>
-                                <span>Certificate Image Placeholder</span>
-                                <small>Add image in <code>img/cert-react.jpg</code></small>
-                            </div>
-                        </div>
-                        <div class="certificate-body">
-                            <div>
-                                <h3>React Developer Certificate — Meta Front-End</h3>
-                                <div class="issuer"><i class="fa fa-award mr-1"></i> Meta / Coursera</div>
-                                <p>
-                                    Advanced React design patterns, component state lifecycle, custom hooks, unit
-                                    testing with Jest, and frontend optimization for enterprise web apps.
-                                </p>
-                            </div>
-                            <div class="certificate-tags">
-                                <span class="certificate-tag">React.js</span>
-                                <span class="certificate-tag">Meta Certified</span>
-                                <span class="certificate-tag">Frontend Architecture</span>
-                            </div>
-                        </div>
-                    </div>
+
+                </div><!-- /.owl-carousel.certificates-carousel -->
+
+                <!-- Slide Counter -->
+                <div class="cert-counter">
+                    <span id="certCurrent">1</span> / <span id="certTotal">10</span>
                 </div>
-            </div>
+
+            </div><!-- /.cert-slider-wrapper -->
         </div>
     </div>
     <!-- Certificates End -->
+
 
 
     <!-- Contact Start -->
@@ -1184,8 +1284,11 @@
                                     style="background: #ffffff; color: #EF233C; box-shadow: none;"><i
                                         class="fab fa-github"></i> GitHub</a>
                                 <a href="https://www.linkedin.com/in/abdul-rafay-76b165320/" target="_blank"
-                                    class="btn btn-sm" style="background: #ffffff; color: #EF233C; box-shadow: none;"><i
+                                    class="btn btn-sm mr-2" style="background: #ffffff; color: #EF233C; box-shadow: none;"><i
                                         class="fab fa-linkedin-in"></i> LinkedIn</a>
+                                <a href="https://www.upwork.com/freelancers/~0103571b9de9fb4c9f?mp_source=share" target="_blank"
+                                    class="btn btn-sm" style="background: #14a800; color: #ffffff; box-shadow: none; border-color: #14a800;"><i
+                                        class="fas fa-briefcase"></i> Upwork</a>
                             </div>
                         </div>
                     </div>
@@ -1301,6 +1404,8 @@
                                 class="fab fa-instagram"></i></a>
                         <a href="https://www.threads.com/@iabdul.rafay7?hl=en" target="_blank" title="Threads"><i
                                 class="fas fa-at"></i></a>
+                        <a href="https://www.upwork.com/freelancers/~0103571b9de9fb4c9f?mp_source=share" target="_blank" title="Upwork" style="color: #14a800;"><i
+                                class="fas fa-briefcase"></i></a>
                         <a href="https://www.facebook.com/a.r.407551" target="_blank" title="Facebook"><i
                                 class="fab fa-facebook-f"></i></a>
                     </div>
@@ -1337,6 +1442,19 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+
+    <!-- Certificate Lightbox Modal -->
+    <div id="certLightbox" class="cert-lightbox" role="dialog" aria-modal="true" aria-label="Certificate viewer">
+        <div class="cert-lightbox-overlay" id="certLightboxOverlay" onclick="closeCertLightbox()"></div>
+        <div class="cert-lightbox-content">
+            <img id="certLightboxImg" src="" alt="Certificate">
+            <div class="cert-lightbox-caption" id="certLightboxCaption"></div>
+        </div>
+        <button class="cert-lightbox-close" id="certLightboxClose" aria-label="Close" onclick="closeCertLightbox()" type="button">
+            <i class="fa fa-times"></i>
+        </button>
+    </div>
+
 </body>
 
 </html>

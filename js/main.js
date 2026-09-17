@@ -91,6 +91,82 @@
         }
     });
 
+    // Certificates carousel — 1-up card shuffle
+    var $certCarousel = $(".certificates-carousel");
+
+    function updateCertCounter(e) {
+        if (!e) return;
+        var total = (e.item && e.item.count) ? e.item.count : $(".certificates-carousel .cert-slide").length;
+        var current = 1;
+        if (e.relatedTarget && typeof e.relatedTarget.relative === "function") {
+            current = e.relatedTarget.relative(e.item.index) + 1;
+        } else if (e.item && typeof e.item.index === "number") {
+            current = ((e.item.index % total) + total) % total + 1;
+        }
+        $("#certCurrent").text(current);
+        $("#certTotal").text(total);
+    }
+
+    $certCarousel.on("changed.owl.carousel", updateCertCounter);
+
+    $certCarousel.owlCarousel({
+        loop: true,
+        autoplay: true,
+        autoplayTimeout: 4500,
+        autoplayHoverPause: true,
+        smartSpeed: 600,
+        animateOut: 'certShuffleOut',
+        animateIn:  'certShuffleIn',
+        dots: false,
+        nav: false,
+        items: 1,
+        margin: 0,
+        stagePadding: 0
+    });
+
+    // Set initial counter values
+    var totalCertCards = $(".certificates-carousel .cert-slide").length;
+    $("#certCurrent").text("1");
+    $("#certTotal").text(totalCertCards || 10);
+
+    // Custom prev/next buttons
+    $("#certPrev").off("click").on("click", function () {
+        $certCarousel.trigger("prev.owl.carousel");
+    });
+    $("#certNext").off("click").on("click", function () {
+        $certCarousel.trigger("next.owl.carousel");
+    });
+
+    // Certificate Lightbox
+    $(document).on("click", ".certificate-img-container", function () {
+        var $img = $(this).find("img");
+        var src = $img.attr("src");
+        var caption = $(this).closest(".certificate-item").find("h3").text();
+        if (src) {
+            $("#certLightboxImg").attr("src", src);
+            $("#certLightboxCaption").text(caption);
+            $("#certLightbox").addClass("active");
+            $("body").css("overflow", "hidden");
+        }
+    });
+
+    function closeCertLightbox() {
+        $("#certLightbox").removeClass("active");
+        $("body").css("overflow", "");
+        setTimeout(function () { $("#certLightboxImg").attr("src", ""); }, 300);
+    }
+    window.closeCertLightbox = closeCertLightbox;
+
+    $(document).on("click", "#certLightboxClose, #certLightboxOverlay", function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        closeCertLightbox();
+    });
+
+    $(document).on("keydown", function (e) {
+        if (e.key === "Escape") closeCertLightbox();
+    });
+
 
 
     // Portfolio filter

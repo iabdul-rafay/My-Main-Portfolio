@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Abdul Rafay — Curriculum Vitae</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Abdul Rafay CV, Resume, Full-Stack Developer, MERN Stack, AI Enthusiast" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- CSS Libraries -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #EF233C;
+            --primary-dark: #d90429;
+            --dark: #2b2d42;
+            --darker: #1a1c29;
+            --body-bg: #f4f6fa;
+            --card-bg: #ffffff;
+            --text-main: #2b2d42;
+            --text-muted: #6c757d;
+            --border-color: #e9ecef;
+            --upwork: #14a800;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: var(--body-bg);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* Top Action Bar */
+        .cv-topbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(43, 45, 66, 0.96);
+            backdrop-filter: blur(10px);
+            padding: 12px 0;
+            border-bottom: 3px solid var(--primary);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .cv-topbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .cv-topbar-brand {
+            color: #ffffff;
+            font-size: 20px;
+            font-weight: 700;
+            text-decoration: none !important;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+        }
+
+        .cv-topbar-brand span.dot {
+            color: var(--primary);
+        }
+
+        .cv-topbar-brand span.subtitle {
+            font-size: 13px;
+            font-weight: 400;
+            color: #ced4da;
+            margin-left: 8px;
+        }
+
+        .cv-actions {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .cv-btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 9px 18px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-decoration: none !important;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 2px solid transparent;
+            border-radius: 2px;
+        }
+
+        .cv-btn-back {
+            background: transparent;
+            color: #ffffff;
+            border-color: rgba(255, 255, 255, 0.35);
+        }
+
+        .cv-btn-back:hover {
+            background: rgba(255, 255, 255, 0.12);
+            color: #ffffff;
+            border-color: #ffffff;
+        }
+
+        .cv-btn-print {
+            background: var(--primary);
+            color: #ffffff;
+            box-shadow: inset 0 0 0 50px var(--primary);
+        }
+
+        .cv-btn-print:hover {
+            background: transparent;
+            color: var(--primary);
+            box-shadow: inset 0 0 0 0 var(--primary);
+            border-color: var(--primary);
+        }
+
+        .cv-btn-download {
+            background: #ffffff;
+            color: var(--dark);
+        }
+
+        .cv-btn-download:hover {
+            background: var(--primary);
+            color: #ffffff;
+        }
+
+        .cv-btn-upwork {
+            background: var(--upwork);
+            color: #ffffff;
+        }
+
+        .cv-btn-upwork:hover {
+            background: #108a00;
+            color: #ffffff;
+        }
+
+        /* CV Sheet / Document */
+        .cv-document {
+            max-width: 960px;
+            margin: 35px auto 60px auto;
+            background: var(--card-bg);
+            border-radius: 4px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+        }
+
+        /* CV Header */
+        .cv-header {
+            background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 100%);
+            color: #ffffff;
+            padding: 40px 50px;
+            position: relative;
+            border-bottom: 4px solid var(--primary);
+        }
+
+        .cv-header-content {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .cv-avatar-wrap {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid var(--primary);
+            overflow: hidden;
+            background: #f8f9fa;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            flex-shrink: 0;
+        }
+
+        .cv-avatar-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+        }
+
+        .cv-header-info {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .cv-name {
+            font-size: 32px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            margin: 0 0 6px 0;
+            text-transform: uppercase;
+        }
+
+        .cv-name span {
+            color: var(--primary);
+        }
+
+        .cv-headline {
+            font-size: 15px;
+            font-weight: 500;
+            color: #f1f1f1;
+            margin-bottom: 16px;
+            letter-spacing: 0.5px;
+        }
+
+        .cv-contacts {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 18px;
+            font-size: 13px;
+            color: #e0e0e0;
+        }
+
+        .cv-contact-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            color: #e0e0e0;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .cv-contact-item i {
+            color: var(--primary);
+            font-size: 13px;
+        }
+
+        .cv-contact-item:hover {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        /* CV Body */
+        .cv-body {
+            padding: 45px 50px;
+        }
+
+        /* Section Styling */
+        .cv-section {
+            margin-bottom: 35px;
+        }
+
+        .cv-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .cv-section-title {
+            font-size: 17px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--dark);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 18px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e9ecef;
+            position: relative;
+        }
+
+        .cv-section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--primary);
+        }
+
+        .cv-section-title i {
+            color: var(--primary);
+            font-size: 18px;
+        }
+
+        /* About Text */
+        .cv-about-text {
+            font-size: 14px;
+            color: #4a4d5a;
+            line-height: 1.75;
+            text-align: justify;
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 15px;
+        }
+
+        .skill-group {
+            background: #fbfbfd;
+            border: 1px solid #edf0f5;
+            padding: 14px 16px;
+            border-radius: 4px;
+            border-left: 3px solid var(--primary);
+        }
+
+        .skill-group-title {
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--dark);
+            margin-bottom: 6px;
+            letter-spacing: 0.5px;
+        }
+
+        .skill-group-content {
+            font-size: 13px;
+            color: #555968;
+            line-height: 1.5;
+        }
+
+        /* Timeline / Item Styles */
+        .cv-item {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 24px;
+            border-left: 2px solid #edf0f5;
+        }
+
+        .cv-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .cv-item::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 4px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--primary);
+            border: 2px solid #ffffff;
+            box-shadow: 0 0 0 2px var(--primary);
+        }
+
+        .cv-item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-bottom: 4px;
+        }
+
+        .cv-item-role {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        .cv-item-date {
+            font-size: 12.5px;
+            font-weight: 600;
+            color: var(--primary);
+            background: rgba(239, 35, 60, 0.08);
+            padding: 2px 10px;
+            border-radius: 20px;
+            letter-spacing: 0.3px;
+        }
+
+        .cv-item-company {
+            font-size: 13.5px;
+            font-weight: 600;
+            color: #555968;
+            margin-bottom: 6px;
+        }
+
+        .cv-tech-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 8px;
+        }
+
+        .cv-tech-pill {
+            display: inline-block;
+            background: #eef2f7;
+            color: #3f4756;
+            font-size: 11.5px;
+            font-weight: 600;
+            padding: 2px 8px;
+            border-radius: 3px;
+        }
+
+        .cv-bullets {
+            margin: 0;
+            padding-left: 18px;
+            font-size: 13.5px;
+            color: #4f5464;
+            line-height: 1.65;
+        }
+
+        .cv-bullets li {
+            margin-bottom: 4px;
+        }
+
+        .cv-bullets li:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Project Links */
+        .cv-project-links {
+            margin-top: 8px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            font-size: 12.5px;
+        }
+
+        .cv-project-links a {
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .cv-project-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Education & Certs */
+        .edu-badge {
+            display: inline-block;
+            background: #f1f3f7;
+            color: var(--dark);
+            font-size: 12px;
+            font-weight: 600;
+            padding: 3px 10px;
+            border-radius: 4px;
+            margin-top: 4px;
+        }
+
+        .cert-list {
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 10px;
+        }
+
+        .cert-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            background: #fcfdfe;
+            border: 1px solid #eef2f6;
+            padding: 10px 14px;
+            border-radius: 4px;
+            font-size: 13px;
+            color: #333;
+        }
+
+        .cert-item i {
+            color: var(--primary);
+            margin-top: 3px;
+            font-size: 14px;
+        }
+
+        /* Footer */
+        .cv-footer {
+            background: #fafbfe;
+            border-top: 1px solid #edf0f5;
+            padding: 25px 50px;
+            text-align: center;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .cv-footer a {
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        /* Print Specifics */
+        @media print {
+            .cv-topbar {
+                display: none !important;
+            }
+
+            body {
+                background: #ffffff !important;
+                color: #000000 !important;
+            }
+
+            .cv-document {
+                box-shadow: none !important;
+                border: none !important;
+                margin: 0 !important;
+                max-width: 100% !important;
+            }
+
+            .cv-header {
+                background: #2b2d42 !important;
+                color: #ffffff !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                padding: 30px 40px !important;
+            }
+
+            .cv-body {
+                padding: 30px 40px !important;
+            }
+
+            .cv-item {
+                page-break-inside: avoid;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .cv-header, .cv-body, .cv-footer {
+                padding: 25px 20px !important;
+            }
+            .cv-header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .cv-avatar-wrap {
+                margin: 0 auto;
+            }
+            .cv-contacts {
+                justify-content: center;
+            }
+            .cv-name {
+                font-size: 26px;
+            }
+            .skills-grid, .cert-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Top Action Bar -->
+    <header class="cv-topbar">
+        <div class="container">
+            <a href="index.html" class="cv-topbar-brand">Abdul<span class="dot">.</span> <span class="subtitle">| Curriculum Vitae</span></a>
+            <div class="cv-actions">
+                <a href="index.html" class="cv-btn cv-btn-back">
+                    <i class="fa fa-arrow-left mr-2"></i> Back to Portfolio
+                </a>
+                <button onclick="window.print()" class="cv-btn cv-btn-print">
+                    <i class="fa fa-print mr-2"></i> Print / Save PDF
+                </button>
+                <a href="Abdul_Rafay_CV_Updated.docx" download class="cv-btn cv-btn-download">
+                    <i class="fa fa-download mr-2"></i> Download .DOCX
+                </a>
+                <a href="https://www.upwork.com/freelancers/~0103571b9de9fb4c9f?mp_source=share" target="_blank" class="cv-btn cv-btn-upwork">
+                    <i class="fas fa-briefcase mr-2"></i> Upwork Profile
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- CV Document Container -->
+    <main class="container">
+        <div class="cv-document">
+
+            <!-- CV Header -->
+            <div class="cv-header">
+                <div class="cv-header-content">
+                    <div class="cv-avatar-wrap">
+                        <img src="img/about.png" alt="Abdul Rafay">
+                    </div>
+                    <div class="cv-header-info">
+                        <h1 class="cv-name">Abdul <span>Rafay</span></h1>
+                        <div class="cv-headline">
+                            BS Software Engineering &nbsp;·&nbsp; Full-Stack Developer &nbsp;·&nbsp; AI / Agentic AI Enthusiast
+                        </div>
+                        <div class="cv-contacts">
+                            <span class="cv-contact-item">
+                                <i class="fa fa-map-marker-alt"></i> Rawalpindi / Islamabad, Pakistan
+                            </span>
+                            <a href="tel:+923195292295" class="cv-contact-item">
+                                <i class="fa fa-phone-alt"></i> +92 319 5292295
+                            </a>
+                            <a href="mailto:iamrafay64@gmail.com" class="cv-contact-item">
+                                <i class="fa fa-envelope"></i> iamrafay64@gmail.com
+                            </a>
+                            <a href="https://github.com/iabdul-rafay" target="_blank" class="cv-contact-item">
+                                <i class="fab fa-github"></i> github.com/iabdul-rafay
+                            </a>
+                            <a href="https://linkedin.com/in/abdul-rafay-76b165320/" target="_blank" class="cv-contact-item">
+                                <i class="fab fa-linkedin"></i> LinkedIn
+                            </a>
+                            <a href="https://www.upwork.com/freelancers/~0103571b9de9fb4c9f?mp_source=share" target="_blank" class="cv-contact-item" style="color: #69db7c;">
+                                <i class="fas fa-briefcase" style="color: #69db7c;"></i> Upwork Profile
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CV Body -->
+            <div class="cv-body">
+
+                <!-- About Me -->
+                <section class="cv-section">
+                    <h2 class="cv-section-title"><i class="fa fa-user"></i> About Me</h2>
+                    <p class="cv-about-text">
+                        Motivated fresh graduate in BS Software Engineering from Capital University of Science and Technology (CUST) with hands-on experience building full-stack web applications and AI-powered systems. Currently expanding my skill set in blockchain/Web3 development, React, Node.js, Python, Firebase, and REST APIs — actively learning and applying these technologies through real-world projects. Passionate about MERN Stack development and exploring machine learning and agentic AI concepts to solve practical problems. Always seeking new ideas, challenges, and opportunities to grow as a developer. Immediately available for full-time roles and internships in Web Development and AI/Agentic AI.
+                    </p>
+                </section>
+
+                <!-- Technical Skills -->
+                <section class="cv-section">
+                    <h2 class="cv-section-title"><i class="fa fa-code"></i> Technical Skills</h2>
+                    <div class="skills-grid">
+                        <div class="skill-group">
+                            <div class="skill-group-title">Programming Languages</div>
+                            <div class="skill-group-content">C, C++, Python, JavaScript (ES6+), TypeScript, HTML5, CSS3, SQL, Solidity, PHP</div>
+                        </div>
+                        <div class="skill-group">
+                            <div class="skill-group-title">Frameworks & Libraries</div>
+                            <div class="skill-group-content">React.js, React Native, Node.js, Express.js, Vue.js, Expo, Tailwind CSS</div>
+                        </div>
+                        <div class="skill-group">
+                            <div class="skill-group-title">AI / Machine Learning</div>
+                            <div class="skill-group-content">Machine Learning, Sentiment Analysis, Agentic AI, IoT Integration, TensorFlow Lite</div>
+                        </div>
+                        <div class="skill-group">
+                            <div class="skill-group-title">Web3 & Blockchain</div>
+                            <div class="skill-group-content">Ethereum, Solidity, Hardhat, MetaMask, ERC-721, Web3.js, Sepolia Testnet</div>
+                        </div>
+                        <div class="skill-group">
+                            <div class="skill-group-title">Databases</div>
+                            <div class="skill-group-content">MongoDB, Firebase Firestore, MySQL, Relational SQL</div>
+                        </div>
+                        <div class="skill-group">
+                            <div class="skill-group-title">Cloud & DevOps</div>
+                            <div class="skill-group-content">Firebase (Auth, Hosting, Realtime DB), Vercel, REST APIs, Git, GitHub, CI/CD basics</div>
+                        </div>
+                        <div class="skill-group">
+                            <div class="skill-group-title">Development Tools</div>
+                            <div class="skill-group-content">VS Code, Postman, Figma, Cloudinary, XAMPP, Arduino IDE, Hardhat, npm/yarn</div>
+                        </div>
+                        <div class="skill-group">
+                            <div class="skill-group-title">Soft Skills</div>
+                            <div class="skill-group-content">Agile / Scrum, Problem Solving, Leadership, Communication, Time Management</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Professional Experience -->
+                <section class="cv-section">
+                    <h2 class="cv-section-title"><i class="fa fa-briefcase"></i> Professional Experience</h2>
+
+                    <!-- Experience 1 -->
+                    <div class="cv-item">
+                        <div class="cv-item-header">
+                            <div class="cv-item-role">MERN Stack Developer</div>
+                            <div class="cv-item-date">June 2026 – Present</div>
+                        </div>
+                        <div class="cv-item-company">Khastech Solutions</div>
+                        <div class="cv-tech-pills">
+                            <span class="cv-tech-pill">MongoDB</span>
+                            <span class="cv-tech-pill">Express.js</span>
+                            <span class="cv-tech-pill">React.js</span>
+                            <span class="cv-tech-pill">Node.js</span>
+                            <span class="cv-tech-pill">REST APIs</span>
+                            <span class="cv-tech-pill">Agile Development</span>
+                        </div>
+                        <ul class="cv-bullets">
+                            <li>Building and maintaining full-stack web applications using the MERN stack for real-world client projects.</li>
+                            <li>Developing REST APIs, building React components, and integrating MongoDB databases for production systems.</li>
+                            <li>Collaborating with the team on agile-based development cycles, code reviews, and deployment workflows.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Experience 2 -->
+                    <div class="cv-item">
+                        <div class="cv-item-header">
+                            <div class="cv-item-role">Data Science & ML Intern</div>
+                            <div class="cv-item-date">June 2025 – August 2025</div>
+                        </div>
+                        <div class="cv-item-company">Ezytech</div>
+                        <div class="cv-tech-pills">
+                            <span class="cv-tech-pill">Python</span>
+                            <span class="cv-tech-pill">Pandas</span>
+                            <span class="cv-tech-pill">Scikit-learn</span>
+                            <span class="cv-tech-pill">Data Analysis</span>
+                            <span class="cv-tech-pill">Machine Learning</span>
+                        </div>
+                        <ul class="cv-bullets">
+                            <li>Worked on data preprocessing, exploratory data analysis, and building supervised ML models.</li>
+                            <li>Gained hands-on experience with Python-based data science tools in a professional environment.</li>
+                            <li>Contributed to model evaluation, feature engineering, and documentation of ML pipelines.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Experience 3 -->
+                    <div class="cv-item">
+                        <div class="cv-item-header">
+                            <div class="cv-item-role">VIS / FOP</div>
+                            <div class="cv-item-date">Fall 2025</div>
+                        </div>
+                        <div class="cv-item-company">Traffic Police Islamabad (with CTD)</div>
+                        <div class="cv-tech-pills">
+                            <span class="cv-tech-pill">Traffic Police Islamabad</span>
+                            <span class="cv-tech-pill">Counter Terrorism Department (CTD)</span>
+                            <span class="cv-tech-pill">Public Sector Tech Operations</span>
+                        </div>
+                        <ul class="cv-bullets">
+                            <li>Contributed to a technology-assisted traffic operations project under Traffic Police Islamabad.</li>
+                            <li>Also collaborated with the Counter Terrorism Department (CTD) during the same engagement period.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Featured Live Projects -->
+                <section class="cv-section">
+                    <h2 class="cv-section-title"><i class="fa fa-laptop-code"></i> Featured Live Projects</h2>
+
+                    <!-- Project 1: DocConnect -->
+                    <div class="cv-item">
+                        <div class="cv-item-header">
+                            <div class="cv-item-role">DocConnect – Healthcare Appointment Platform (MERN Stack)</div>
+                        </div>
+                        <div class="cv-tech-pills">
+                            <span class="cv-tech-pill">MongoDB</span>
+                            <span class="cv-tech-pill">Express.js</span>
+                            <span class="cv-tech-pill">React.js</span>
+                            <span class="cv-tech-pill">Node.js</span>
+                            <span class="cv-tech-pill">JWT Auth</span>
+                            <span class="cv-tech-pill">REST APIs</span>
+                            <span class="cv-tech-pill">Vercel</span>
+                        </div>
+                        <ul class="cv-bullets">
+                            <li>Built a comprehensive full-stack healthcare platform with patient appointment booking, doctor management, role-based auth (JWT), and admin dashboard.</li>
+                            <li>Designed and implemented RESTful API with 20+ endpoints for user management, appointment scheduling, and automated notification triggers.</li>
+                            <li>Engineered a responsive React.js UI with real-time status updates via polling and responsive mobile layout.</li>
+                        </ul>
+                        <div class="cv-project-links">
+                            <a href="https://doc-connect-self.vercel.app/" target="_blank"><i class="fa fa-external-link-alt"></i> Live: doc-connect-self.vercel.app</a>
+                            <a href="https://github.com/iabdul-rafay/Doc-Connect.git" target="_blank"><i class="fab fa-github"></i> GitHub: Doc-Connect</a>
+                        </div>
+                    </div>
+
+                    <!-- Project 2: Brew & Bloom -->
+                    <div class="cv-item">
+                        <div class="cv-item-header">
+                            <div class="cv-item-role">Brew & Bloom – Coffee Shop Platform</div>
+                        </div>
+                        <div class="cv-tech-pills">
+                            <span class="cv-tech-pill">React.js</span>
+                            <span class="cv-tech-pill">JavaScript</span>
+                            <span class="cv-tech-pill">CSS3</span>
+                            <span class="cv-tech-pill">Responsive Design</span>
+                            <span class="cv-tech-pill">Vercel</span>
+                        </div>
+                        <ul class="cv-bullets">
+                            <li>Developed a modern, elegant web application for Brew & Bloom specialty coffee shop featuring an interactive digital menu, story, and online ordering flow.</li>
+                            <li>Crafted a warm aesthetic UI with smooth transitions, interactive product showcases, and responsive multi-device compatibility.</li>
+                        </ul>
+                        <div class="cv-project-links">
+                            <a href="https://brewandbloom-vert.vercel.app/" target="_blank"><i class="fa fa-external-link-alt"></i> Live: brewandbloom-vert.vercel.app</a>
+                            <a href="https://github.com/iabdul-rafay/Brew-Bloom-Coffee-Shop" target="_blank"><i class="fab fa-github"></i> GitHub: Brew-Bloom-Coffee-Shop</a>
+                        </div>
+                    </div>
+
+                    <!-- Project 3: Khastech Solutions -->
+                    <div class="cv-item">
+                        <div class="cv-item-header">
+                            <div class="cv-item-role">Khastech Solutions – Tech Company Brand Platform</div>
+                        </div>
+                        <div class="cv-tech-pills">
+                            <span class="cv-tech-pill">React.js</span>
+                            <span class="cv-tech-pill">Node.js</span>
+                            <span class="cv-tech-pill">Tailwind CSS</span>
+                            <span class="cv-tech-pill">Firebase</span>
+                            <span class="cv-tech-pill">SEO</span>
+                            <span class="cv-tech-pill">Vercel</span>
+                        </div>
+                        <ul class="cv-bullets">
+                            <li>Designed and developed the official website and client brand platform for Khastech Solutions, a technology company, from concept to live deployment.</li>
+                            <li>Built a multi-page site covering services, portfolio, team, and contact sections with lead capture and email notifications.</li>
+                            <li>Optimised for performance and SEO, achieving sub-second load times and structured component hierarchy.</li>
+                        </ul>
+                        <div class="cv-project-links">
+                            <a href="https://khastech.com" target="_blank"><i class="fa fa-external-link-alt"></i> Live: khastech.com (Main Domain)</a>
+                            <a href="https://khastechcom.vercel.app/" target="_blank"><i class="fa fa-external-link-alt"></i> Live Preview: khastechcom.vercel.app</a>
+                        </div>
+                    </div>
+
+                    <!-- Project 4: myVISTA -->
+                    <div class="cv-item">
+                        <div class="cv-item-header">
+                            <div class="cv-item-role">myVISTA – Bilingual AI Smart Home Controller (Mobile Application, FYP)</div>
+                            <div class="cv-item-date">Sep 2024 – Jun 2025</div>
+                        </div>
+                        <div class="cv-tech-pills">
+                            <span class="cv-tech-pill">React Native</span>
+                            <span class="cv-tech-pill">Expo</span>
+                            <span class="cv-tech-pill">Firebase</span>
+                            <span class="cv-tech-pill">ESP32</span>
+                            <span class="cv-tech-pill">NLP (English / Urdu)</span>
+                        </div>
+                        <ul class="cv-bullets">
+                            <li>Co-developed and delivered a bilingual (English/Urdu) voice-command smart-home controller mobile application with gesture controls as Final Year Project.</li>
+                            <li>Architected Firebase Realtime Database schema handling 200+ device state events per session with sub-100ms latency.</li>
+                            <li>Integrated ESP32 microcontrollers via WebSocket for real-time appliance control across 8 device categories.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Project 5: Xaryab Mentorship -->
+                    <div class="cv-item">
+                        <div class="cv-item-header">
+                            <div class="cv-item-role">Xaryab – Mentorship Platform</div>
+                        </div>
+                        <div class="cv-tech-pills">
+                            <span class="cv-tech-pill">React.js</span>
+                            <span class="cv-tech-pill">Node.js</span>
+                            <span class="cv-tech-pill">Express.js</span>
+                            <span class="cv-tech-pill">MongoDB</span>
+                            <span class="cv-tech-pill">Firebase Auth</span>
+                        </div>
+                        <ul class="cv-bullets">
+                            <li>Built a full-stack mentorship platform connecting students with professional mentors through structured session booking and goal tracking.</li>
+                            <li>Implemented role-based authentication (mentor / mentee) using Firebase Auth with protected route handling in React.</li>
+                            <li>Designed RESTful API with Express.js and MongoDB supporting mentor profiles, session scheduling, and progress dashboards.</li>
+                        </ul>
+                        <div class="cv-project-links">
+                            <a href="https://xaryab-mentorship-ten.vercel.app/" target="_blank"><i class="fa fa-external-link-alt"></i> Live: xaryab-mentorship-ten.vercel.app</a>
+                            <span class="text-muted" style="font-size: 12.5px;"><i class="fa fa-lock mr-1"></i> Private Project (In Progress)</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Education -->
+                <section class="cv-section">
+                    <h2 class="cv-section-title"><i class="fa fa-graduation-cap"></i> Education</h2>
+
+                    <div class="cv-item">
+                        <div class="cv-item-header">
+                            <div class="cv-item-role">BS Software Engineering</div>
+                            <div class="cv-item-date">2021 – 2025</div>
+                        </div>
+                        <div class="cv-item-company">Capital University of Science and Technology (CUST)</div>
+                        <div class="edu-badge">CGPA: 2.79 / 4.00 &nbsp;|&nbsp; Graduated 2025</div>
+                        <div style="font-size: 13px; color: #555968; margin-top: 6px;">
+                            <strong>FYP:</strong> myVISTA – Bilingual AI Smart Home Controller (Completed & Successfully Delivered)
+                        </div>
+                    </div>
+
+                    <div class="cv-item">
+                        <div class="cv-item-header">
+                            <div class="cv-item-role">ICS — Intermediate in Computer Science</div>
+                            <div class="cv-item-date">2020 – 2022</div>
+                        </div>
+                        <div class="cv-item-company">Punjab College Rawalpindi</div>
+                        <div class="edu-badge">Result: 60%</div>
+                    </div>
+
+                    <div class="cv-item">
+                        <div class="cv-item-header">
+                            <div class="cv-item-role">Matriculation (Science)</div>
+                            <div class="cv-item-date">2018 – 2020</div>
+                        </div>
+                        <div class="cv-item-company">Honhaar Grammar School</div>
+                        <div class="edu-badge">Result: 70%</div>
+                    </div>
+                </section>
+
+                <!-- Certifications & Awards -->
+                <section class="cv-section">
+                    <h2 class="cv-section-title"><i class="fa fa-award"></i> Certifications & Awards</h2>
+                    <ul class="cert-list">
+                        <li class="cert-item">
+                            <i class="fa fa-certificate"></i>
+                            <div><strong>Summer Internship Certificate</strong> — ISPR (Inter-Services Public Relations)</div>
+                        </li>
+                        <li class="cert-item">
+                            <i class="fa fa-trophy"></i>
+                            <div><strong>Participation Certificate</strong> — CUST Hackathon 2024 (CUST)</div>
+                        </li>
+                        <li class="cert-item">
+                            <i class="fa fa-check-circle"></i>
+                            <div><strong>Python for Everybody</strong> — University of Michigan / Coursera (2024)</div>
+                        </li>
+                        <li class="cert-item">
+                            <i class="fa fa-spinner"></i>
+                            <div><strong>Blockchain Fundamentals</strong> — Coursera / UC Berkeley (In Progress, 2025)</div>
+                        </li>
+                        <li class="cert-item">
+                            <i class="fa fa-spinner"></i>
+                            <div><strong>React Developer Certificate</strong> — Meta Front-End Developer (In Progress, 2025)</div>
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- Additional Information -->
+                <section class="cv-section">
+                    <h2 class="cv-section-title"><i class="fa fa-info-circle"></i> Additional Information</h2>
+                    <div style="font-size: 13.5px; color: #4f5464; line-height: 1.8;">
+                        <div><strong>GitHub:</strong> <a href="https://github.com/iabdul-rafay" target="_blank" style="color: var(--primary);">github.com/iabdul-rafay</a> — 7+ public project repositories</div>
+                        <div><strong>Languages:</strong> English (Professional Proficiency), Urdu (Native)</div>
+                        <div><strong>Methodologies:</strong> Agile / Scrum, Git-flow branching, test-driven development basics</div>
+                        <div><strong>Availability:</strong> Immediately available for full-time roles and internships; open to remote and on-site (Rawalpindi / Islamabad)</div>
+                        <div><strong>References:</strong> Available upon request</div>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- CV Footer -->
+            <div class="cv-footer">
+                <div>© Abdul Rafay. All rights reserved. &nbsp;|&nbsp; <a href="index.html">Back to Portfolio</a> &nbsp;|&nbsp; <a href="https://www.upwork.com/freelancers/~0103571b9de9fb4c9f?mp_source=share" target="_blank">Upwork Profile</a></div>
+            </div>
+
+        </div>
+    </main>
+
+</body>
+
+</html>

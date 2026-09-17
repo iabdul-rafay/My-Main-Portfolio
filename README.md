@@ -1,4 +1,3 @@
-cat > /mnt/user-data/outputs/README.md << 'EOF'
 # 🚀 Abdul Rafay — Personal Portfolio Website
 
 > A modern, fully responsive personal portfolio website built with HTML5, CSS3, and JavaScript — showcasing Full-Stack Web Development, AI & Agentic AI, and Web3/Blockchain skills.
@@ -169,5 +168,3 @@ This project is open source and available under the [MIT License](LICENSE).
 
 <p align="center">Made with ❤️ by <strong>Abdul Rafay</strong></p>
 <p align="center">⭐ Star this repo if you found it helpful!</p>
-EOF
-echo "Done"
