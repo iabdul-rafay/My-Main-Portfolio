@@ -1,3 +1,63 @@
+// Intro Splash — fixed path drawing animation
+(function () {
+    // Wait for full DOM + fonts to be ready
+    window.addEventListener('load', function () {
+
+        var path = document.getElementById('welcome-path');
+        var splash = document.getElementById('splash');
+        var nameWrap = document.querySelector('.name-wrap');
+        var corners = document.querySelectorAll('.corner');
+        var progressFill = document.querySelector('.progress-fill');
+
+        if (!path || !splash) return;
+
+        // Show corner brackets
+        setTimeout(function () {
+            corners.forEach(function (c) { c.classList.add('visible'); });
+        }, 200);
+
+        // Start progress bar
+        setTimeout(function () {
+            if (progressFill) progressFill.style.width = '100%';
+        }, 200);
+
+        // Get path length AFTER load to ensure correct value
+        var len = path.getTotalLength();
+
+        // Set initial state — hidden
+        path.style.strokeDasharray  = len;
+        path.style.strokeDashoffset = len;
+        path.style.transition = 'none';
+
+        // Force browser to register the initial state
+        path.getBoundingClientRect();
+
+        // Start drawing animation after tiny delay
+        setTimeout(function () {
+            path.style.transition = 'stroke-dashoffset 3s ease-in-out';
+            path.style.strokeDashoffset = '0';
+        }, 100);
+
+        // Show name after drawing completes
+        setTimeout(function () {
+            if (nameWrap) nameWrap.classList.add('visible');
+        }, 3400);
+
+        // Slide splash up and hide
+        setTimeout(function () {
+            splash.classList.add('exit');
+            setTimeout(function () {
+                splash.style.display = 'none';
+                document.body.style.overflow = '';
+                // Remove corners and progress bar too
+                corners.forEach(function (c) { c.style.display = 'none'; });
+                var track = document.querySelector('.progress-track');
+                if (track) track.style.display = 'none';
+            }, 850);
+        }, 4400);
+
+    });
+})();
 (function ($) {
     "use strict";
 
