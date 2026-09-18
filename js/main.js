@@ -59,6 +59,80 @@
     });
 })();
 (function ($) {
+    // About Terminal Typing Animation
+(function () {
+    var lines = [
+        { text: "const rafay = {",           cls: "tc-white" },
+        { text: "  name: ",   end: "'Abdul Rafay',",          sc: "tc-blue",  ec: "tc-green" },
+        { text: "  role: ",   end: "'Full-Stack Developer',",  sc: "tc-blue",  ec: "tc-green" },
+        { text: "  skills: [",                cls: "tc-white" },
+        { text: "    'React.js', 'Node.js',", cls: "tc-green" },
+        { text: "    'Python', 'Firebase',",  cls: "tc-green" },
+        { text: "    'MongoDB', 'TypeScript'",cls: "tc-green" },
+        { text: "  ],",                       cls: "tc-white" },
+        { text: "  passion: ", end: "'Building cool things'", sc: "tc-blue", ec: "tc-green" },
+        { text: "};",                         cls: "tc-white" },
+        { text: "" },
+        { text: "rafay.", end: "hire();",     sc: "tc-pink",  ec: "tc-yellow" },
+        { text: "" },
+        { text: "// ✓ Available for work!",   cls: "tc-muted" }
+    ];
+
+    var tbody = document.getElementById('tbody');
+    if (!tbody) return;
+
+    var lineIdx = 0, charIdx = 0, currentDiv = null;
+
+    function typeNext() {
+        if (lineIdx >= lines.length) {
+            var cur = document.createElement('span');
+            cur.className = 't-cursor';
+            tbody.appendChild(cur);
+            return;
+        }
+
+        var line = lines[lineIdx];
+
+        if (!currentDiv) {
+            currentDiv = document.createElement('div');
+            currentDiv.className = 't-line';
+            tbody.appendChild(currentDiv);
+            charIdx = 0;
+        }
+
+        var fullText = line.text + (line.end || '');
+        var splitAt  = line.text.length;
+
+        if (charIdx < fullText.length) {
+            var ch = fullText[charIdx];
+            if (charIdx < splitAt) {
+                var s1 = currentDiv.querySelector('.s1');
+                if (!s1) {
+                    s1 = document.createElement('span');
+                    s1.className = 's1 ' + (line.cls || line.sc || '');
+                    currentDiv.appendChild(s1);
+                }
+                s1.textContent += ch;
+            } else {
+                var s2 = currentDiv.querySelector('.s2');
+                if (!s2) {
+                    s2 = document.createElement('span');
+                    s2.className = 's2 ' + (line.ec || '');
+                    currentDiv.appendChild(s2);
+                }
+                s2.textContent += ch;
+            }
+            charIdx++;
+            setTimeout(typeNext, fullText.length === 0 ? 0 : 38);
+        } else {
+            lineIdx++;
+            currentDiv = null;
+            setTimeout(typeNext, fullText.length === 0 ? 20 : 90);
+        }
+    }
+
+    setTimeout(typeNext, 800);
+})();
     "use strict";
 
     // loader
