@@ -1,6 +1,5 @@
-// Intro Splash — fixed path drawing animation
+// Intro Splash — shows only once per session
 (function () {
-    // Wait for full DOM + fonts to be ready
     window.addEventListener('load', function () {
 
         var path = document.getElementById('welcome-path');
@@ -8,8 +7,22 @@
         var nameWrap = document.querySelector('.name-wrap');
         var corners = document.querySelectorAll('.corner');
         var progressFill = document.querySelector('.progress-fill');
+        var track = document.querySelector('.progress-track');
 
         if (!path || !splash) return;
+
+        // Check if splash was already shown this session
+        if (sessionStorage.getItem('splashShown')) {
+            // Hide everything immediately — no animation
+            splash.style.display = 'none';
+            document.body.style.overflow = '';
+            corners.forEach(function (c) { c.style.display = 'none'; });
+            if (track) track.style.display = 'none';
+            return;
+        }
+
+        // Mark splash as shown for this session
+        sessionStorage.setItem('splashShown', 'true');
 
         // Show corner brackets
         setTimeout(function () {
@@ -21,37 +34,30 @@
             if (progressFill) progressFill.style.width = '100%';
         }, 200);
 
-        // Get path length AFTER load to ensure correct value
+        // Get path length and animate
         var len = path.getTotalLength();
-
-        // Set initial state — hidden
         path.style.strokeDasharray  = len;
         path.style.strokeDashoffset = len;
         path.style.transition = 'none';
-
-        // Force browser to register the initial state
         path.getBoundingClientRect();
 
-        // Start drawing animation after tiny delay
         setTimeout(function () {
             path.style.transition = 'stroke-dashoffset 3s ease-in-out';
             path.style.strokeDashoffset = '0';
         }, 100);
 
-        // Show name after drawing completes
+        // Show name
         setTimeout(function () {
             if (nameWrap) nameWrap.classList.add('visible');
         }, 3400);
 
-        // Slide splash up and hide
+        // Slide up and hide
         setTimeout(function () {
             splash.classList.add('exit');
             setTimeout(function () {
                 splash.style.display = 'none';
                 document.body.style.overflow = '';
-                // Remove corners and progress bar too
                 corners.forEach(function (c) { c.style.display = 'none'; });
-                var track = document.querySelector('.progress-track');
                 if (track) track.style.display = 'none';
             }, 850);
         }, 4400);
@@ -451,6 +457,25 @@
         $(this).addClass('filter-active');
         portfolioIsotope.isotope({ filter: $(this).data('filter') });
     });
+    
+    // Smooth scroll reveal on scroll
+(function () {
+    var animatedEls = document.querySelectorAll(
+        '.fade-in-up, .fade-in-left, .fade-in-right, .zoom-in'
+    );
+
+    function checkVisible() {
+        animatedEls.forEach(function (el) {
+            var rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight - 80) {
+                el.classList.add('visible');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', checkVisible);
+    window.addEventListener('load', checkVisible);
+})();
 
 })(jQuery);
 
