@@ -2381,3 +2381,41 @@ html {
     opacity: 1;
     transform: scale(1);
 }
+
+/***************************************/
+/********* Ink Drop Cursor CSS *********/
+/***************************************/
+* { cursor: none !important; }
+
+.ink-drip {
+    animation: inkDrip 1.4s ease-in infinite;
+    transform-origin: center top;
+    transform-box: fill-box;
+}
+.ink-drip2 {
+    animation: inkDrip 1.4s ease-in infinite 0.7s;
+    transform-origin: center top;
+    transform-box: fill-box;
+}
+@keyframes inkDrip {
+    0%   { transform: scaleY(0) translateY(0);      opacity: 0.9; }
+    45%  { transform: scaleY(1) translateY(0);      opacity: 0.85; }
+    100% { transform: scaleY(0.2) translateY(14px); opacity: 0; }
+}
+
+body.cur-is-link #ink-ring-circle {
+    r: 26;
+    opacity: 0.75;
+    animation: inkRingRotate 5s linear infinite;
+}
+body.cur-is-link #ink-ring-dot { opacity: 0.6; }
+
+@keyframes inkRingRotate {
+    to { stroke-dashoffset: -100; }
+}
+
+body.cur-is-click #ink-arrow-body {
+    transform: scale(0.88);
+    transform-origin: 3px 3px;
+    transform-box: fill-box;
+}
