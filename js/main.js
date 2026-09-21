@@ -1,6 +1,6 @@
 // Intro Splash — shows only once per session
 (function () {
-    window.addEventListener('load', function () {
+    document.addEventListener('DOMContentLoaded', function () {
 
         var path = document.getElementById('welcome-path');
         var splash = document.getElementById('splash');
@@ -30,12 +30,14 @@
         }, 200);
 
         // Start progress bar
+        path.style.visibility = 'visible';
         setTimeout(function () {
             if (progressFill) progressFill.style.width = '100%';
         }, 200);
 
         // Get path length and animate
         var len = path.getTotalLength();
+        path.style.visibility = 'visible';
         path.style.strokeDasharray  = len;
         path.style.strokeDashoffset = len;
         path.style.transition = 'none';
@@ -165,7 +167,7 @@
         }
     });
     $('.back-to-top').click(function () {
-        $('html, body').animate({ scrollTop: 0 }, 1500, 'easeInOutExpo');
+        $('html, body').animate({ scrollTop: 0 }, 200, 'easeInOutExpo');
         return false;
     });
 

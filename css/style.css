@@ -2126,6 +2126,7 @@ a:focus {
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-miterlimit: 10;
+  visibility: hidden;
 }
 
 .name-wrap {
