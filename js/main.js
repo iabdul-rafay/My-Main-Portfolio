@@ -38,7 +38,7 @@
         // Get path length and animate
         var len = path.getTotalLength();
         path.style.visibility = 'visible';
-        path.style.strokeDasharray  = len;
+        path.style.strokeDasharray = len;
         path.style.strokeDashoffset = len;
         path.style.transition = 'none';
         path.getBoundingClientRect();
@@ -67,80 +67,81 @@
     });
 })();
 (function ($) {
+
     // About Terminal Typing Animation
-(function () {
-    var lines = [
-        { text: "const rafay = {",           cls: "tc-white" },
-        { text: "  name: ",   end: "'Abdul Rafay',",          sc: "tc-blue",  ec: "tc-green" },
-        { text: "  role: ",   end: "'Full-Stack Developer',",  sc: "tc-blue",  ec: "tc-green" },
-        { text: "  skills: [",                cls: "tc-white" },
-        { text: "    'React.js', 'Node.js',", cls: "tc-green" },
-        { text: "    'Python', 'Firebase',",  cls: "tc-green" },
-        { text: "    'MongoDB', 'TypeScript'",cls: "tc-green" },
-        { text: "  ],",                       cls: "tc-white" },
-        { text: "  passion: ", end: "'Building cool things'", sc: "tc-blue", ec: "tc-green" },
-        { text: "};",                         cls: "tc-white" },
-        { text: "" },
-        { text: "rafay.", end: "hire();",     sc: "tc-pink",  ec: "tc-yellow" },
-        { text: "" },
-        { text: "// ✓ Available for work!",   cls: "tc-muted" }
-    ];
+    (function () {
+        var lines = [
+            { text: "const rafay = {", cls: "tc-white" },
+            { text: "  name: ", end: "'Abdul Rafay',", sc: "tc-blue", ec: "tc-green" },
+            { text: "  role: ", end: "'Full-Stack Developer',", sc: "tc-blue", ec: "tc-green" },
+            { text: "  skills: [", cls: "tc-white" },
+            { text: "    'React.js', 'Node.js',", cls: "tc-green" },
+            { text: "    'Python', 'Firebase',", cls: "tc-green" },
+            { text: "    'MongoDB', 'TypeScript'", cls: "tc-green" },
+            { text: "  ],", cls: "tc-white" },
+            { text: "  passion: ", end: "'Building cool things'", sc: "tc-blue", ec: "tc-green" },
+            { text: "};", cls: "tc-white" },
+            { text: "" },
+            { text: "rafay.", end: "hire();", sc: "tc-pink", ec: "tc-yellow" },
+            { text: "" },
+            { text: "// ✓ Available for work!", cls: "tc-muted" }
+        ];
 
-    var tbody = document.getElementById('tbody');
-    if (!tbody) return;
+        var tbody = document.getElementById('tbody');
+        if (!tbody) return;
 
-    var lineIdx = 0, charIdx = 0, currentDiv = null;
+        var lineIdx = 0, charIdx = 0, currentDiv = null;
 
-    function typeNext() {
-        if (lineIdx >= lines.length) {
-            var cur = document.createElement('span');
-            cur.className = 't-cursor';
-            tbody.appendChild(cur);
-            return;
-        }
-
-        var line = lines[lineIdx];
-
-        if (!currentDiv) {
-            currentDiv = document.createElement('div');
-            currentDiv.className = 't-line';
-            tbody.appendChild(currentDiv);
-            charIdx = 0;
-        }
-
-        var fullText = line.text + (line.end || '');
-        var splitAt  = line.text.length;
-
-        if (charIdx < fullText.length) {
-            var ch = fullText[charIdx];
-            if (charIdx < splitAt) {
-                var s1 = currentDiv.querySelector('.s1');
-                if (!s1) {
-                    s1 = document.createElement('span');
-                    s1.className = 's1 ' + (line.cls || line.sc || '');
-                    currentDiv.appendChild(s1);
-                }
-                s1.textContent += ch;
-            } else {
-                var s2 = currentDiv.querySelector('.s2');
-                if (!s2) {
-                    s2 = document.createElement('span');
-                    s2.className = 's2 ' + (line.ec || '');
-                    currentDiv.appendChild(s2);
-                }
-                s2.textContent += ch;
+        function typeNext() {
+            if (lineIdx >= lines.length) {
+                var cur = document.createElement('span');
+                cur.className = 't-cursor';
+                tbody.appendChild(cur);
+                return;
             }
-            charIdx++;
-            setTimeout(typeNext, fullText.length === 0 ? 0 : 38);
-        } else {
-            lineIdx++;
-            currentDiv = null;
-            setTimeout(typeNext, fullText.length === 0 ? 20 : 90);
-        }
-    }
 
-    setTimeout(typeNext, 800);
-})();
+            var line = lines[lineIdx];
+
+            if (!currentDiv) {
+                currentDiv = document.createElement('div');
+                currentDiv.className = 't-line';
+                tbody.appendChild(currentDiv);
+                charIdx = 0;
+            }
+
+            var fullText = line.text + (line.end || '');
+            var splitAt = line.text.length;
+
+            if (charIdx < fullText.length) {
+                var ch = fullText[charIdx];
+                if (charIdx < splitAt) {
+                    var s1 = currentDiv.querySelector('.s1');
+                    if (!s1) {
+                        s1 = document.createElement('span');
+                        s1.className = 's1 ' + (line.cls || line.sc || '');
+                        currentDiv.appendChild(s1);
+                    }
+                    s1.textContent += ch;
+                } else {
+                    var s2 = currentDiv.querySelector('.s2');
+                    if (!s2) {
+                        s2 = document.createElement('span');
+                        s2.className = 's2 ' + (line.ec || '');
+                        currentDiv.appendChild(s2);
+                    }
+                    s2.textContent += ch;
+                }
+                charIdx++;
+                setTimeout(typeNext, fullText.length === 0 ? 0 : 38);
+            } else {
+                lineIdx++;
+                currentDiv = null;
+                setTimeout(typeNext, fullText.length === 0 ? 20 : 90);
+            }
+        }
+
+        setTimeout(typeNext, 800);
+    })();
     "use strict";
 
     // loader
@@ -258,7 +259,7 @@
         autoplayHoverPause: true,
         smartSpeed: 600,
         animateOut: 'certShuffleOut',
-        animateIn:  'certShuffleIn',
+        animateIn: 'certShuffleIn',
         dots: false,
         nav: false,
         items: 1,
@@ -372,6 +373,15 @@
             highlights: ["Pet-focused community experience", "Responsive social platform interface", "Scalable full-stack foundation"],
             live: "https://paws-and-co-swart.vercel.app/",
             github: "https://github.com/iabdul-rafay/Paws-and-Co.-"
+        },
+        "old-portfolio": {
+            title: "Portfolio (v1)",
+            category: "My Old Portfolio",
+            description: "My previous personal portfolio website built to showcase early software engineering work, AI & ML projects, and development milestones with an interactive dark aesthetic.",
+            stack: ["HTML5", "CSS3", "JavaScript", "Netlify", "Responsive UI"],
+            highlights: ["Personal brand and early projects showcase", "Dark aesthetic with custom interactive elements", "Deployed live on Netlify"],
+            live: "https://iabdul-rafay-portfolio.netlify.app/",
+            github: "https://github.com/iabdul-rafay"
         }
     };
 
@@ -459,201 +469,201 @@
         $(this).addClass('filter-active');
         portfolioIsotope.isotope({ filter: $(this).data('filter') });
     });
-    
+
     // Smooth scroll reveal on scroll
-(function () {
-    var animatedEls = document.querySelectorAll(
-        '.fade-in-up, .fade-in-left, .fade-in-right, .zoom-in'
-    );
+    (function () {
+        var animatedEls = document.querySelectorAll(
+            '.fade-in-up, .fade-in-left, .fade-in-right, .zoom-in'
+        );
 
-    function checkVisible() {
-        animatedEls.forEach(function (el) {
-            var rect = el.getBoundingClientRect();
-            if (rect.top < window.innerHeight - 80) {
-                el.classList.add('visible');
-            }
-        });
-    }
-
-    window.addEventListener('scroll', checkVisible);
-    window.addEventListener('load', checkVisible);
-})();
-
-// Ink Drop Cursor
-(function () {
-    var arrow     = document.getElementById('ink-arrow');
-    var ringEl    = document.getElementById('ink-ring');
-    var ringCirc  = document.getElementById('ink-ring-circle');
-    var ringDot   = document.getElementById('ink-ring-dot');
-    var arrowBody = document.getElementById('ink-arrow-body');
-    var drip1     = document.querySelector('.ink-drip');
-    var drip2     = document.querySelector('.ink-drip2');
-    var canvas    = document.getElementById('ink-canvas');
-    if (!arrow || !canvas) return;
-
-    var ctx = canvas.getContext('2d');
-
-    function resizeCanvas() {
-        canvas.width  = window.innerWidth;
-        canvas.height = window.innerHeight;
-    }
-    resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
-
-    var mx = -200, my = -200;
-    var rx = -200, ry = -200;
-    var lastX = -200, lastY = -200;
-    var speed = 0;
-    var particles = [];
-    var isLink = false, isDark = false;
-
-    document.addEventListener('mousemove', function (e) {
-        mx = e.clientX;
-        my = e.clientY;
-
-        var dx = mx - lastX, dy = my - lastY;
-        speed = Math.sqrt(dx * dx + dy * dy);
-        lastX = mx; lastY = my;
-
-        arrow.style.transform = 'translate(' + (mx - 3) + 'px,' + (my - 3) + 'px)';
-
-        var hit = document.elementFromPoint(mx, my);
-        var dark = !!(hit && hit.closest('[data-dark]'));
-        if (dark !== isDark) {
-            isDark = dark;
-            applyDarkMode(dark);
-        }
-
-        var linked = !!(hit && hit.closest('a, button, [role="button"]'));
-        if (linked !== isLink) {
-            isLink = linked;
-            document.body.classList.toggle('cur-is-link', linked);
-            ringDot.style.opacity = linked ? '0.6' : '0';
-            if (linked) spawnBurst(mx, my, 8);
-        }
-
-        var drops = Math.min(Math.floor(speed * 0.2), 5);
-        for (var i = 0; i < drops; i++) spawnTrail(mx, my);
-    });
-
-    function applyDarkMode(on) {
-        if (on) {
-            arrowBody.setAttribute('fill', '#ffffff');
-            arrowBody.setAttribute('stroke', 'rgba(255,255,255,0.25)');
-            drip1 && drip1.setAttribute('fill', 'rgba(255,255,255,0.75)');
-            drip2 && drip2.setAttribute('fill', 'rgba(255,255,255,0.5)');
-            ringCirc.setAttribute('stroke', '#ffffff');
-        } else {
-            arrowBody.setAttribute('fill', '#EF233C');
-            arrowBody.setAttribute('stroke', '#2b2d42');
-            drip1 && drip1.setAttribute('fill', '#EF233C');
-            drip2 && drip2.setAttribute('fill', '#2b2d42');
-            ringCirc.setAttribute('stroke', '#EF233C');
-        }
-    }
-
-    function spawnTrail(x, y) {
-        particles.push({
-            x: x + (Math.random() - 0.5) * 10,
-            y: y + 14 + Math.random() * 8,
-            r: Math.random() * 2.5 + 0.8,
-            vx: (Math.random() - 0.5) * 1.2,
-            vy: Math.random() * 2.5 + 0.8,
-            life: 0.9,
-            decay: Math.random() * 0.035 + 0.025,
-            col: Math.random() < 0.65 ? '#EF233C' : '#2b2d42',
-            blob: false
-        });
-    }
-
-    function spawnBurst(x, y, count) {
-        for (var i = 0; i < count; i++) {
-            var angle = (i / count) * Math.PI * 2 + Math.random() * 0.5;
-            var spd   = Math.random() * 3.5 + 2;
-            particles.push({
-                x: x, y: y,
-                r: Math.random() * 3.5 + 1.5,
-                vx: Math.cos(angle) * spd,
-                vy: Math.sin(angle) * spd - 1,
-                life: 1.0,
-                decay: Math.random() * 0.03 + 0.025,
-                col: Math.random() < 0.55 ? '#EF233C' : '#2b2d42',
-                blob: true
+        function checkVisible() {
+            animatedEls.forEach(function (el) {
+                var rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 80) {
+                    el.classList.add('visible');
+                }
             });
         }
-    }
 
-    document.addEventListener('mousedown', function () {
-        document.body.classList.add('cur-is-click');
-        spawnBurst(mx, my, 16);
-    });
-    document.addEventListener('mouseup', function () {
-        document.body.classList.remove('cur-is-click');
-    });
+        window.addEventListener('scroll', checkVisible);
+        window.addEventListener('load', checkVisible);
+    })();
 
-    document.addEventListener('mouseleave', function () {
-        arrow.style.opacity = '0';
-        ringEl.style.opacity = '0';
-    });
-    document.addEventListener('mouseenter', function () {
-        arrow.style.opacity = '1';
-        ringEl.style.opacity = '1';
-    });
+    // Ink Drop Cursor
+    (function () {
+        var arrow = document.getElementById('ink-arrow');
+        var ringEl = document.getElementById('ink-ring');
+        var ringCirc = document.getElementById('ink-ring-circle');
+        var ringDot = document.getElementById('ink-ring-dot');
+        var arrowBody = document.getElementById('ink-arrow-body');
+        var drip1 = document.querySelector('.ink-drip');
+        var drip2 = document.querySelector('.ink-drip2');
+        var canvas = document.getElementById('ink-canvas');
+        if (!arrow || !canvas) return;
 
-    function lerp(a, b, t) { return a + (b - a) * t; }
+        var ctx = canvas.getContext('2d');
 
-    function loop() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
 
-        rx = lerp(rx, mx, 0.1);
-        ry = lerp(ry, my, 0.1);
-        ringEl.style.transform = 'translate(' + (rx - 40) + 'px,' + (ry - 40) + 'px)';
+        var mx = -200, my = -200;
+        var rx = -200, ry = -200;
+        var lastX = -200, lastY = -200;
+        var speed = 0;
+        var particles = [];
+        var isLink = false, isDark = false;
 
-        particles = particles.filter(function (p) { return p.life > 0; });
-        for (var i = 0; i < particles.length; i++) {
-            var p = particles[i];
-            p.x  += p.vx;
-            p.y  += p.vy;
-            p.vy += 0.18;
-            p.vx *= 0.96;
-            p.life -= p.decay;
+        document.addEventListener('mousemove', function (e) {
+            mx = e.clientX;
+            my = e.clientY;
 
-            ctx.save();
-            ctx.globalAlpha = Math.max(0, p.life);
-            ctx.fillStyle   = p.col;
-            if (p.blob) {
-                ctx.beginPath();
-                ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-                ctx.fill();
+            var dx = mx - lastX, dy = my - lastY;
+            speed = Math.sqrt(dx * dx + dy * dy);
+            lastX = mx; lastY = my;
+
+            arrow.style.transform = 'translate(' + (mx - 3) + 'px,' + (my - 3) + 'px)';
+
+            var hit = document.elementFromPoint(mx, my);
+            var dark = !!(hit && hit.closest('[data-dark]'));
+            if (dark !== isDark) {
+                isDark = dark;
+                applyDarkMode(dark);
+            }
+
+            var linked = !!(hit && hit.closest('a, button, [role="button"]'));
+            if (linked !== isLink) {
+                isLink = linked;
+                document.body.classList.toggle('cur-is-link', linked);
+                ringDot.style.opacity = linked ? '0.6' : '0';
+                if (linked) spawnBurst(mx, my, 8);
+            }
+
+            var drops = Math.min(Math.floor(speed * 0.2), 5);
+            for (var i = 0; i < drops; i++) spawnTrail(mx, my);
+        });
+
+        function applyDarkMode(on) {
+            if (on) {
+                arrowBody.setAttribute('fill', '#ffffff');
+                arrowBody.setAttribute('stroke', 'rgba(255,255,255,0.25)');
+                drip1 && drip1.setAttribute('fill', 'rgba(255,255,255,0.75)');
+                drip2 && drip2.setAttribute('fill', 'rgba(255,255,255,0.5)');
+                ringCirc.setAttribute('stroke', '#ffffff');
             } else {
-                ctx.translate(p.x, p.y);
-                ctx.scale(1, 1.5);
-                ctx.beginPath();
-                ctx.arc(0, 0, p.r, 0, Math.PI * 2);
-                ctx.fill();
-                ctx.beginPath();
-                ctx.ellipse(0, p.r * 0.9, p.r * 0.4, p.r * 0.7, 0, 0, Math.PI * 2);
-                ctx.fill();
+                arrowBody.setAttribute('fill', '#EF233C');
+                arrowBody.setAttribute('stroke', '#2b2d42');
+                drip1 && drip1.setAttribute('fill', '#EF233C');
+                drip2 && drip2.setAttribute('fill', '#2b2d42');
+                ringCirc.setAttribute('stroke', '#EF233C');
             }
-            ctx.restore();
         }
 
-        if (speed < 1 && Math.random() < 0.025) {
+        function spawnTrail(x, y) {
             particles.push({
-                x: mx, y: my + 6,
-                r: Math.random() * 2 + 1,
-                vx: (Math.random() - 0.5) * 0.4,
-                vy: Math.random() + 0.5,
-                life: 1.0, decay: 0.022,
-                col: '#EF233C', blob: false
+                x: x + (Math.random() - 0.5) * 10,
+                y: y + 14 + Math.random() * 8,
+                r: Math.random() * 2.5 + 0.8,
+                vx: (Math.random() - 0.5) * 1.2,
+                vy: Math.random() * 2.5 + 0.8,
+                life: 0.9,
+                decay: Math.random() * 0.035 + 0.025,
+                col: Math.random() < 0.65 ? '#EF233C' : '#2b2d42',
+                blob: false
             });
         }
 
-        requestAnimationFrame(loop);
-    }
-    loop();
-})();
-// End Ink Drop Cursor
+        function spawnBurst(x, y, count) {
+            for (var i = 0; i < count; i++) {
+                var angle = (i / count) * Math.PI * 2 + Math.random() * 0.5;
+                var spd = Math.random() * 3.5 + 2;
+                particles.push({
+                    x: x, y: y,
+                    r: Math.random() * 3.5 + 1.5,
+                    vx: Math.cos(angle) * spd,
+                    vy: Math.sin(angle) * spd - 1,
+                    life: 1.0,
+                    decay: Math.random() * 0.03 + 0.025,
+                    col: Math.random() < 0.55 ? '#EF233C' : '#2b2d42',
+                    blob: true
+                });
+            }
+        }
+
+        document.addEventListener('mousedown', function () {
+            document.body.classList.add('cur-is-click');
+            spawnBurst(mx, my, 16);
+        });
+        document.addEventListener('mouseup', function () {
+            document.body.classList.remove('cur-is-click');
+        });
+
+        document.addEventListener('mouseleave', function () {
+            arrow.style.opacity = '0';
+            ringEl.style.opacity = '0';
+        });
+        document.addEventListener('mouseenter', function () {
+            arrow.style.opacity = '1';
+            ringEl.style.opacity = '1';
+        });
+
+        function lerp(a, b, t) { return a + (b - a) * t; }
+
+        function loop() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            rx = lerp(rx, mx, 0.1);
+            ry = lerp(ry, my, 0.1);
+            ringEl.style.transform = 'translate(' + (rx - 40) + 'px,' + (ry - 40) + 'px)';
+
+            particles = particles.filter(function (p) { return p.life > 0; });
+            for (var i = 0; i < particles.length; i++) {
+                var p = particles[i];
+                p.x += p.vx;
+                p.y += p.vy;
+                p.vy += 0.18;
+                p.vx *= 0.96;
+                p.life -= p.decay;
+
+                ctx.save();
+                ctx.globalAlpha = Math.max(0, p.life);
+                ctx.fillStyle = p.col;
+                if (p.blob) {
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                    ctx.fill();
+                } else {
+                    ctx.translate(p.x, p.y);
+                    ctx.scale(1, 1.5);
+                    ctx.beginPath();
+                    ctx.arc(0, 0, p.r, 0, Math.PI * 2);
+                    ctx.fill();
+                    ctx.beginPath();
+                    ctx.ellipse(0, p.r * 0.9, p.r * 0.4, p.r * 0.7, 0, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+                ctx.restore();
+            }
+
+            if (speed < 1 && Math.random() < 0.025) {
+                particles.push({
+                    x: mx, y: my + 6,
+                    r: Math.random() * 2 + 1,
+                    vx: (Math.random() - 0.5) * 0.4,
+                    vy: Math.random() + 0.5,
+                    life: 1.0, decay: 0.022,
+                    col: '#EF233C', blob: false
+                });
+            }
+
+            requestAnimationFrame(loop);
+        }
+        loop();
+    })();
+    // End Ink Drop Cursor
 
 })(jQuery);
 
@@ -681,3 +691,48 @@ function animateCounters() {
 $('#about').waypoint(function () {
     animateCounters();
 }, { offset: '80%', triggerOnce: true });
+
+
+/* ═══════════════════════════════════════════════
+   Dark / Light Theme Toggle
+   ═══════════════════════════════════════════════ */
+(function () {
+    var html      = document.documentElement;
+    var btn       = document.getElementById('theme-toggle');
+    var moonIcon  = btn ? btn.querySelector('.theme-icon-moon') : null;
+    var sunIcon   = btn ? btn.querySelector('.theme-icon-sun')  : null;
+    var STORAGE_KEY = 'ar_theme';
+
+    // Apply theme immediately (before first paint) to avoid flash
+    var saved = localStorage.getItem(STORAGE_KEY) || 'light';
+    html.setAttribute('data-theme', saved);
+
+    function updateIcons(theme) {
+        if (!btn) return;
+        if (theme === 'dark') {
+            moonIcon.style.display = 'none';
+            sunIcon.style.display  = 'flex';
+        } else {
+            moonIcon.style.display = 'flex';
+            sunIcon.style.display  = 'none';
+        }
+        // Retrigger spin animation
+        var icon = theme === 'dark' ? sunIcon : moonIcon;
+        icon.style.animation = 'none';
+        icon.offsetHeight;   // reflow
+        icon.style.animation = '';
+    }
+
+    // Set initial icon state
+    updateIcons(saved);
+
+    if (btn) {
+        btn.addEventListener('click', function () {
+            var current = html.getAttribute('data-theme') || 'light';
+            var next    = current === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', next);
+            localStorage.setItem(STORAGE_KEY, next);
+            updateIcons(next);
+        });
+    }
+})();

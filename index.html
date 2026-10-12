@@ -27,81 +27,76 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+
+    <!-- No-flash theme: apply saved mode before CSS renders -->
+    <script>
+        (function(){
+            var t = localStorage.getItem('ar_theme');
+            if (t) document.documentElement.setAttribute('data-theme', t);
+        })();
+    </script>
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="51">
 
-  <!-- ══ INK DROP CURSOR ══════════════════════════════ -->
-  <svg id="ink-arrow" width="38" height="52" viewBox="0 0 38 52"
-       xmlns="http://www.w3.org/2000/svg" overflow="visible"
-       style="position:fixed;top:0;left:0;pointer-events:none;z-index:999999;will-change:transform;transition:opacity .2s;opacity:0;">
-    <path d="M5,5 L5,37 L12,28 L17,42 L23,40 L18,26 L29,26 Z"
-          fill="rgba(43,45,66,0.2)" transform="translate(2,2)"/>
-    <path id="ink-arrow-body"
-          d="M3,3 L3,35 L10,26 L15,40 L21,38 L16,24 L27,24 Z"
-          fill="#EF233C" stroke="#2b2d42"
-          stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
-    <path d="M3,3 L3,20 L11,12 Z" fill="rgba(255,255,255,0.28)"/>
-    <circle cx="3" cy="3" r="3.5" fill="#2b2d42"/>
-    <circle cx="3" cy="3" r="1.5" fill="rgba(255,255,255,0.4)"/>
-    <ellipse class="ink-drip"  cx="3"  cy="37" rx="2.2" ry="5"   fill="#EF233C"/>
-    <ellipse class="ink-drip2" cx="15" cy="42" rx="1.6" ry="3.5" fill="#2b2d42"/>
-  </svg>
+    <!-- ══ INK DROP CURSOR ══════════════════════════════ -->
+    <svg id="ink-arrow" width="38" height="52" viewBox="0 0 38 52" xmlns="http://www.w3.org/2000/svg" overflow="visible"
+        style="position:fixed;top:0;left:0;pointer-events:none;z-index:999999;will-change:transform;transition:opacity .2s;opacity:0;">
+        <path d="M5,5 L5,37 L12,28 L17,42 L23,40 L18,26 L29,26 Z" fill="rgba(43,45,66,0.2)"
+            transform="translate(2,2)" />
+        <path id="ink-arrow-body" d="M3,3 L3,35 L10,26 L15,40 L21,38 L16,24 L27,24 Z" fill="#EF233C" stroke="#2b2d42"
+            stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" />
+        <path d="M3,3 L3,20 L11,12 Z" fill="rgba(255,255,255,0.28)" />
+        <circle cx="3" cy="3" r="3.5" fill="#2b2d42" />
+        <circle cx="3" cy="3" r="1.5" fill="rgba(255,255,255,0.4)" />
+        <ellipse class="ink-drip" cx="3" cy="37" rx="2.2" ry="5" fill="#EF233C" />
+        <ellipse class="ink-drip2" cx="15" cy="42" rx="1.6" ry="3.5" fill="#2b2d42" />
+    </svg>
 
-  <svg id="ink-ring" width="80" height="80" viewBox="-40 -40 80 80"
-       xmlns="http://www.w3.org/2000/svg"
-       style="position:fixed;top:0;left:0;pointer-events:none;z-index:999998;will-change:transform;transition:opacity .2s;opacity:0;">
-    <circle id="ink-ring-circle" cx="0" cy="0" r="0" fill="none"
-            stroke="#EF233C" stroke-width="1.5" stroke-dasharray="4 4"
-            style="transition:r .4s cubic-bezier(.16,1,.3,1),opacity .3s;opacity:0;"/>
-    <circle id="ink-ring-dot" cx="0" cy="0" r="3"
-            fill="#EF233C" style="opacity:0;transition:opacity .3s;"/>
-  </svg>
+    <svg id="ink-ring" width="80" height="80" viewBox="-40 -40 80 80" xmlns="http://www.w3.org/2000/svg"
+        style="position:fixed;top:0;left:0;pointer-events:none;z-index:999998;will-change:transform;transition:opacity .2s;opacity:0;">
+        <circle id="ink-ring-circle" cx="0" cy="0" r="0" fill="none" stroke="#EF233C" stroke-width="1.5"
+            stroke-dasharray="4 4" style="transition:r .4s cubic-bezier(.16,1,.3,1),opacity .3s;opacity:0;" />
+        <circle id="ink-ring-dot" cx="0" cy="0" r="3" fill="#EF233C" style="opacity:0;transition:opacity .3s;" />
+    </svg>
 
-  <canvas id="ink-canvas"
-          style="position:fixed;inset:0;pointer-events:none;z-index:999997;"></canvas>
-  <!-- ══ END INK DROP CURSOR ══════════════════════════ -->
+    <canvas id="ink-canvas" style="position:fixed;inset:0;pointer-events:none;z-index:999997;"></canvas>
+    <!-- ══ END INK DROP CURSOR ══════════════════════════ -->
     <!-- Intro Splash Start -->
-<div class="corner c-tl"></div>
-<div class="corner c-tr"></div>
-<div class="corner c-bl"></div>
-<div class="corner c-br"></div>
+    <div class="corner c-tl"></div>
+    <div class="corner c-tr"></div>
+    <div class="corner c-bl"></div>
+    <div class="corner c-br"></div>
 
-<div id="splash">
-  <div class="splash-inner">
+    <div id="splash">
+        <div class="splash-inner">
 
-    <svg id="welcome-svg" viewBox="0 0 841.9 168.8"
-      xmlns="http://www.w3.org/2000/svg"
-      style="width:min(820px,90vw);height:auto;display:block;overflow:visible;">
-      <path id="welcome-path"
-        d="M54,129c0,0,32.9-43.8,100.4-5.9c0,0,37.3,20,96.4-15.4c0,0,15.7-5,6.2,14c-9.5,19-2.1,20-2.1,20
+            <svg id="welcome-svg" viewBox="0 0 841.9 168.8" xmlns="http://www.w3.org/2000/svg"
+                style="width:min(820px,90vw);height:auto;display:block;overflow:visible;">
+                <path id="welcome-path" d="M54,129c0,0,32.9-43.8,100.4-5.9c0,0,37.3,20,96.4-15.4c0,0,15.7-5,6.2,14c-9.5,19-2.1,20-2.1,20
         s29.2-39.6,32.4-28.1c0,0-10.5,44.8,22.5,14.7c0,0,18-18.3,1.2-16.1c-16.8,2.3,1.7,28.7,35.9,6.4c0,0,19.4-8.3,8.3-13.9
         c-11.2-5.7-42.3,40.7-12.2,35.5s91.3-105.5,74-123.1c-17.3-17.6-71.7,135-23.8,111c0,0,21.6-15.7,35.5-16.7
         c0,0-25.1,4.1-24.8,23.8s48.2-25.2,69.2-20.8c0,0-22.2,2.4-26,22.4c-0.9,4.6,1.9,9.1,6.4,10.1
         c5.6,1.3,13.9-0.4,22-15.2c0,0,2.9-8.9-4.6-10.2c0,0-0.9,8.4,15.4,1.1c16.4-7.3,26.1-10.4,19.9,2.6
         s-5.8,15.6-5.8,15.6s24.6-26.4,25.2-17.3s-2.6,13.9,23.5-7.8c0,0,5.2-3.2,2.6,2.6
         c-2.6,5.8-16.4,37.1,11,23.2c27.4-13.9,45.9-39.6,39.3-42.2c-6.6-2.6-31.3,15.1-24.8,39.6
-        s67.7-27.1,128.9-11.6s72.3-5.8,72.3-5.8"
-        fill="none"
-        stroke="#EF233C"
-        stroke-width="5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-miterlimit="10"
-      />
-    </svg>
+        s67.7-27.1,128.9-11.6s72.3-5.8,72.3-5.8" fill="none" stroke="#EF233C" stroke-width="5" stroke-linecap="round"
+                    stroke-linejoin="round" stroke-miterlimit="10" />
+            </svg>
 
-    <div class="name-wrap">
-      <div class="name-divider"></div>
-      <p class="name-line">Abdul Rafay</p>
-      <p class="sub-line">Full-Stack Developer</p>
+            <div class="name-wrap">
+                <div class="name-divider"></div>
+                <p class="name-line">Abdul Rafay</p>
+                <p class="sub-line">Full-Stack Developer</p>
+            </div>
+
+        </div>
     </div>
 
-  </div>
-</div>
-
-<div class="progress-track"><div class="progress-fill"></div></div>
-<!-- Intro Splash End -->
+    <div class="progress-track">
+        <div class="progress-fill"></div>
+    </div>
+    <!-- Intro Splash End -->
     <!-- Nav Bar Start -->
     <div class="navbar navbar-expand-lg bg-light navbar-light">
         <div class="container-fluid">
@@ -136,18 +131,21 @@
                 <div class="col-sm-12 col-md-6">
                     <div class="hero-content">
                         <div class="hero-text">
-                         <p class="hero-greeting">
-                              Hi, I'm Abdul Rafay 
-                             <span class="wave-hand">👋</span>
-                             </p>
-                              <h1 class="hero-title">SOFTWARE<br>ENGINEER</h1>
-                             <h2></h2>
-                              <div class="typed-text">Web Developer, MERN Stack Dev, Front End Developer, Back End Developer, AI Enthusiast</div>
-                              </div>
-                              <div class="hero-btn">
-                             <a class="btn" href="mailto:iamrafay64@gmail.com"><i class="fa fa-envelope mr-1"></i> Hire
+                            <p class="hero-greeting">
+                                Hi, I'm Abdul Rafay
+                                <span class="wave-hand">👋</span>
+                            </p>
+                            <h1 class="hero-title">SOFTWARE<br>ENGINEER</h1>
+                            <h2></h2>
+                            <div class="typed-text">Web Developer, MERN Stack Dev, Front End Developer, Back End
+                                Developer, AI Enthusiast</div>
+                        </div>
+                        <div class="hero-btn">
+                            <a class="btn" href="mailto:iamrafay64@gmail.com"><i class="fa fa-envelope mr-1"></i> Hire
                                 Me</a>
-                            <a class="btn btn-upwork" href="https://www.upwork.com/freelancers/~0103571b9de9fb4c9f?mp_source=share" target="_blank"><i class="fas fa-briefcase mr-1"></i> Upwork Profile</a>
+                            <a class="btn btn-upwork"
+                                href="https://www.upwork.com/freelancers/~0103571b9de9fb4c9f?mp_source=share"
+                                target="_blank"><i class="fas fa-briefcase mr-1"></i> Upwork Profile</a>
                             <a class="btn" href="#contact"><i class="fa fa-paper-plane mr-1"></i> Contact Me</a>
                         </div>
                     </div>
@@ -164,28 +162,28 @@
 
 
     <!-- About Start -->
-<div class="about wow fadeInUp" data-wow-delay="0.1s" id="about">
-    <div class="container-fluid">
-        <div class="row align-items-center">
-            <div class="col-lg-6">
-                <div class="about-img">
-                    <div class="terminal-wrap">
-                        <div class="t-bar">
-                            <div class="dot d-red"></div>
-                            <div class="dot d-yellow"></div>
-                            <div class="dot d-green"></div>
-                            <span class="t-title">rafay.js</span>
-                        </div>
-                        <div class="t-body" id="tbody"></div>
-                        <div class="t-status">
-                            <span>● JavaScript</span>
-                            <span>Abdul Rafay</span>
-                            <span>Ln 1, Col 1</span>
+    <div class="about wow fadeInUp" data-wow-delay="0.1s" id="about">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="about-img">
+                        <div class="terminal-wrap">
+                            <div class="t-bar">
+                                <div class="dot d-red"></div>
+                                <div class="dot d-yellow"></div>
+                                <div class="dot d-green"></div>
+                                <span class="t-title">rafay.js</span>
+                            </div>
+                            <div class="t-body" id="tbody"></div>
+                            <div class="t-status">
+                                <span>● JavaScript</span>
+                                <span>Abdul Rafay</span>
+                                <span>Ln 1, Col 1</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-6">
+                <div class="col-lg-6">
                     <div class="about-content">
                         <div class="section-header text-left">
                             <p>Learn About Me</p>
@@ -225,7 +223,7 @@
                                 <div class="progress-bar" role="progressbar" aria-valuenow="88" aria-valuemin="0"
                                     aria-valuemax="100"></div>
                             </div>
-                           
+
                         </div>
                         <div class="d-flex align-items-center flex-wrap" style="gap: 10px;">
                             <button type="button" class="btn" data-toggle="modal" data-target="#aboutModal">
@@ -235,7 +233,9 @@
                                 style="background: #2b2d42; box-shadow: inset 0 0 0 50px #2b2d42;">
                                 <i class="fa fa-file-alt mr-1"></i> View CV
                             </a>
-                            <a class="btn btn-upwork" href="https://www.upwork.com/freelancers/~0103571b9de9fb4c9f?mp_source=share" target="_blank">
+                            <a class="btn btn-upwork"
+                                href="https://www.upwork.com/freelancers/~0103571b9de9fb4c9f?mp_source=share"
+                                target="_blank">
                                 <i class="fas fa-briefcase mr-1"></i> Hire on Upwork
                             </a>
                         </div>
@@ -328,7 +328,7 @@
                         <div class="mb-2">
                             <span class="text-dark" style="font-size: 13px; font-weight: 700;">Languages:</span>
                             <div class="modal-badge-list">
-                            
+
                                 <span class="modal-badge">JavaScript (ES6+)</span>
                                 <span class="modal-badge">TypeScript</span>
                                 <span class="modal-badge">C / C++</span>
@@ -336,7 +336,7 @@
                                 <span class="modal-badge">HTML5</span>
                                 <span class="modal-badge">CSS3</span>
                                 <span class="modal-badge">SQL</span>
-                                
+
                             </div>
                         </div>
                         <div class="mb-2 mt-3">
@@ -354,7 +354,7 @@
                         <div class="mt-3">
                             <span class="text-dark" style="font-size: 13px; font-weight: 700;"> Databases:</span>
                             <div class="modal-badge-list">
-                                
+
                                 <span class="modal-badge">Agentic AI</span>
                                 <span class="modal-badge">MongoDB</span>
                                 <span class="modal-badge">Firebase</span>
@@ -525,9 +525,12 @@
                             MongoDB · Express.js · React.js · Node.js · Khastech Solutions
                         </p>
                         <ul style="margin: 0; padding-left: 18px; font-size: 15px; color: #414141; line-height: 1.6;">
-                            <li>Building and maintaining full-stack web applications using the MERN stack for real-world client projects.</li>
-                            <li>Developing REST APIs, building React components, and integrating MongoDB databases for production systems.</li>
-                            <li>Collaborating with the team on agile-based development cycles, code reviews, and deployment workflows.</li>
+                            <li>Building and maintaining full-stack web applications using the MERN stack for real-world
+                                client projects.</li>
+                            <li>Developing REST APIs, building React components, and integrating MongoDB databases for
+                                production systems.</li>
+                            <li>Collaborating with the team on agile-based development cycles, code reviews, and
+                                deployment workflows.</li>
                         </ul>
                     </div>
                 </div>
@@ -540,9 +543,12 @@
                             Python · Pandas · Scikit-learn · Data Analysis · Machine Learning
                         </p>
                         <ul style="margin: 0; padding-left: 18px; font-size: 15px; color: #414141; line-height: 1.6;">
-                            <li>Worked on data preprocessing, exploratory data analysis, and building supervised ML models.</li>
-                            <li>Gained hands-on experience with Python-based data science tools in a professional environment.</li>
-                            <li>Contributed to model evaluation, feature engineering, and documentation of ML pipelines.</li>
+                            <li>Worked on data preprocessing, exploratory data analysis, and building supervised ML
+                                models.</li>
+                            <li>Gained hands-on experience with Python-based data science tools in a professional
+                                environment.</li>
+                            <li>Contributed to model evaluation, feature engineering, and documentation of ML pipelines.
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -555,8 +561,10 @@
                             Traffic Police Islamabad · Counter Terrorism Department (CTD)
                         </p>
                         <ul style="margin: 0; padding-left: 18px; font-size: 15px; color: #414141; line-height: 1.6;">
-                            <li>Contributed to a technology-assisted traffic operations project under Traffic Police Islamabad.</li>
-                            <li>Also collaborated with the Counter Terrorism Department (CTD) during the same engagement period.</li>
+                            <li>Contributed to a technology-assisted traffic operations project under Traffic Police
+                                Islamabad.</li>
+                            <li>Also collaborated with the Counter Terrorism Department (CTD) during the same engagement
+                                period.</li>
                         </ul>
                     </div>
                 </div>
@@ -566,7 +574,9 @@
                         <h2>BS Software Engineering</h2>
                         <h4>Capital University of Science and Technology (CUST)</h4>
                         <p>
-                            Graduated with CGPA: 2.79 / 4.00. FYP: myVISTA – Bilingual AI Smart Home Controller. In-depth focus on Software Engineering, Data Structures & Algorithms, Distributed Systems, Web Technologies, Database Systems, and Artificial Intelligence.
+                            Graduated with CGPA: 2.79 / 4.00. FYP: myVISTA – Bilingual AI Smart Home Controller.
+                            In-depth focus on Software Engineering, Data Structures & Algorithms, Distributed Systems,
+                            Web Technologies, Database Systems, and Artificial Intelligence.
                         </p>
                     </div>
                 </div>
@@ -588,100 +598,120 @@
 
 
     <!-- Tech Stack Start -->
-<div class="tech-stack-section" id="tech-stack">
-    <div class="container">
-        <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
-            <p>Technologies & Tools</p>
-            <h2>Tech Stack <span style="color:#EF233C;">I Work</span> With</h2>
-        </div>
-
-        <div class="skills-grid-wrapper">
-
-            <!-- Card 1: Full-Stack Web Development -->
-            <div class="skill-category-card wow fadeInUp" data-wow-delay="0.1s">
-                <h3 class="skill-cat-title"><i class="fa fa-laptop-code"></i> Full-Stack Web Development</h3>
-                <div class="skill-items">
-                    <div class="skill-item">
-                        <span class="skill-fallback-icon" style="background:#61dafb;color:#000;display:flex;"><i class="fab fa-react"></i></span>
-                        <div class="skill-info"><span class="skill-name">React.js</span><span class="skill-level">Experienced</span></div>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-fallback-icon" style="background:#539e43;display:flex;"><i class="fab fa-node-js"></i></span>
-                        <div class="skill-info"><span class="skill-name">Node.js</span><span class="skill-level">Experienced</span></div>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-fallback-icon" style="background:#333;display:flex;"><b>Ex</b></span>
-                        <div class="skill-info"><span class="skill-name">Express.js</span><span class="skill-level">Experienced</span></div>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-fallback-icon" style="background:#f7df1e;color:#000;display:flex;"><b>JS</b></span>
-                        <div class="skill-info"><span class="skill-name">JavaScript</span><span class="skill-level">Experienced</span></div>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-fallback-icon" style="background:#3178c6;display:flex;"><b>TS</b></span>
-                        <div class="skill-info"><span class="skill-name">TypeScript</span><span class="skill-level">Experienced</span></div>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-fallback-icon" style="background:#EF233C;display:flex;"><b>API</b></span>
-                        <div class="skill-info"><span class="skill-name">REST APIs</span><span class="skill-level">Experienced</span></div>
-                    </div>
-                </div>
+    <div class="tech-stack-section" id="tech-stack">
+        <div class="container">
+            <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
+                <p>Technologies & Tools</p>
+                <h2>Tech Stack <span style="color:#EF233C;">I Work</span> With</h2>
             </div>
 
-            <!-- Card 2: Modern Frontend & UI/UX -->
-            <div class="skill-category-card wow fadeInUp" data-wow-delay="0.2s">
-                <h3 class="skill-cat-title"><i class="fa fa-paint-brush"></i> Modern Frontend & UI/UX</h3>
-                <div class="skill-items">
-                    <div class="skill-item">
-                        <span class="skill-fallback-icon" style="background:#e44d26;display:flex;"><b>H5</b></span>
-                        <div class="skill-info"><span class="skill-name">HTML5</span><span class="skill-level">Experienced</span></div>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-fallback-icon" style="background:#1572b6;display:flex;"><b>C3</b></span>
-                        <div class="skill-info"><span class="skill-name">CSS3</span><span class="skill-level">Experienced</span></div>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-fallback-icon" style="background:#41b883;display:flex;"><b>V</b></span>
-                        <div class="skill-info"><span class="skill-name">Vue.js</span><span class="skill-level">Intermediate</span></div>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-fallback-icon" style="background:#38bdf8;color:#000;display:flex;"><b>TW</b></span>
-                        <div class="skill-info"><span class="skill-name">Tailwind CSS</span><span class="skill-level">Experienced</span></div>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-fallback-icon" style="background:#563d7c;display:flex;"><b>BS</b></span>
-                        <div class="skill-info"><span class="skill-name">Bootstrap</span><span class="skill-level">Experienced</span></div>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-fallback-icon" style="background:#f24e1e;display:flex;"><b>FG</b></span>
-                        <div class="skill-info"><span class="skill-name">Figma</span><span class="skill-level">Intermediate</span></div>
-                    </div>
-                </div>
-            </div>
- 
-            <!-- Card 3: Databases, Cloud & Web3 -->
-            <div class="skill-category-card wow fadeInUp" data-wow-delay="0.4s">
-                <h3 class="skill-cat-title"><i class="fa fa-database"></i> Databases</h3>
-                <div class="skill-items">
-                    <div class="skill-item">
-                        <span class="skill-fallback-icon" style="background:#47a248;display:flex;"><b>MG</b></span>
-                        <div class="skill-info"><span class="skill-name">MongoDB</span><span class="skill-level">Experienced</span></div>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-fallback-icon" style="background:#ffca28;color:#000;display:flex;"><b>FB</b></span>
-                        <div class="skill-info"><span class="skill-name">Firebase</span><span class="skill-level">Experienced</span></div>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-fallback-icon" style="background:#00758f;display:flex;"><b>SQL</b></span>
-                        <div class="skill-info"><span class="skill-name">MySQL / SQL</span><span class="skill-level">Experienced</span></div>
-                    </div>
-                </div>
-            </div>
+            <div class="skills-grid-wrapper">
 
+                <!-- Card 1: Full-Stack Web Development -->
+                <div class="skill-category-card wow fadeInUp" data-wow-delay="0.1s">
+                    <h3 class="skill-cat-title"><i class="fa fa-laptop-code"></i> Full-Stack Web Development</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span class="skill-fallback-icon" style="background:#61dafb;color:#000;display:flex;"><i
+                                    class="fab fa-react"></i></span>
+                            <div class="skill-info"><span class="skill-name">React.js</span><span
+                                    class="skill-level">Experienced</span></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-fallback-icon" style="background:#539e43;display:flex;"><i
+                                    class="fab fa-node-js"></i></span>
+                            <div class="skill-info"><span class="skill-name">Node.js</span><span
+                                    class="skill-level">Experienced</span></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-fallback-icon" style="background:#333;display:flex;"><b>Ex</b></span>
+                            <div class="skill-info"><span class="skill-name">Express.js</span><span
+                                    class="skill-level">Experienced</span></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-fallback-icon"
+                                style="background:#f7df1e;color:#000;display:flex;"><b>JS</b></span>
+                            <div class="skill-info"><span class="skill-name">JavaScript</span><span
+                                    class="skill-level">Experienced</span></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-fallback-icon" style="background:#3178c6;display:flex;"><b>TS</b></span>
+                            <div class="skill-info"><span class="skill-name">TypeScript</span><span
+                                    class="skill-level">Experienced</span></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-fallback-icon" style="background:#EF233C;display:flex;"><b>API</b></span>
+                            <div class="skill-info"><span class="skill-name">REST APIs</span><span
+                                    class="skill-level">Experienced</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Modern Frontend & UI/UX -->
+                <div class="skill-category-card wow fadeInUp" data-wow-delay="0.2s">
+                    <h3 class="skill-cat-title"><i class="fa fa-paint-brush"></i> Modern Frontend & UI/UX</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span class="skill-fallback-icon" style="background:#e44d26;display:flex;"><b>H5</b></span>
+                            <div class="skill-info"><span class="skill-name">HTML5</span><span
+                                    class="skill-level">Experienced</span></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-fallback-icon" style="background:#1572b6;display:flex;"><b>C3</b></span>
+                            <div class="skill-info"><span class="skill-name">CSS3</span><span
+                                    class="skill-level">Experienced</span></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-fallback-icon" style="background:#41b883;display:flex;"><b>V</b></span>
+                            <div class="skill-info"><span class="skill-name">Vue.js</span><span
+                                    class="skill-level">Intermediate</span></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-fallback-icon"
+                                style="background:#38bdf8;color:#000;display:flex;"><b>TW</b></span>
+                            <div class="skill-info"><span class="skill-name">Tailwind CSS</span><span
+                                    class="skill-level">Experienced</span></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-fallback-icon" style="background:#563d7c;display:flex;"><b>BS</b></span>
+                            <div class="skill-info"><span class="skill-name">Bootstrap</span><span
+                                    class="skill-level">Experienced</span></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-fallback-icon" style="background:#f24e1e;display:flex;"><b>FG</b></span>
+                            <div class="skill-info"><span class="skill-name">Figma</span><span
+                                    class="skill-level">Intermediate</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: Databases, Cloud & Web3 -->
+                <div class="skill-category-card wow fadeInUp" data-wow-delay="0.4s">
+                    <h3 class="skill-cat-title"><i class="fa fa-database"></i> Databases</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span class="skill-fallback-icon" style="background:#47a248;display:flex;"><b>MG</b></span>
+                            <div class="skill-info"><span class="skill-name">MongoDB</span><span
+                                    class="skill-level">Experienced</span></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-fallback-icon"
+                                style="background:#ffca28;color:#000;display:flex;"><b>FB</b></span>
+                            <div class="skill-info"><span class="skill-name">Firebase</span><span
+                                    class="skill-level">Experienced</span></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-fallback-icon" style="background:#00758f;display:flex;"><b>SQL</b></span>
+                            <div class="skill-info"><span class="skill-name">MySQL / SQL</span><span
+                                    class="skill-level">Experienced</span></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </div>
-</div>
-<!-- Tech Stack End -->
+    <!-- Tech Stack End -->
 
     <!-- Portfolio / Projects Start -->
     <div class="portfolio" id="portfolio">
@@ -703,7 +733,8 @@
             <div class="row portfolio-container">
                 <!-- Featured Project 1: DocConnect -->
                 <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-web wow fadeInUp" data-wow-delay="0.0s">
-                    <div class="portfolio-wrap project-trigger" data-project="docconnect" role="button" tabindex="0" aria-label="View DocConnect project details">
+                    <div class="portfolio-wrap project-trigger" data-project="docconnect" role="button" tabindex="0"
+                        aria-label="View DocConnect project details">
                         <div class="portfolio-img">
                             <img src="img/DocConnect.png" alt="DocConnect healthcare appointment platform">
                         </div>
@@ -713,8 +744,10 @@
                                 <span class="portfolio-status">Live · MERN</span>
                             </div>
                             <div class="portfolio-actions">
-                                <a class="btn" href="https://doc-connect-self.vercel.app/" aria-label="Open DocConnect live site"><i class="fa fa-external-link-alt"></i></a>
-                                <a class="btn" href="https://github.com/iabdul-rafay/Doc-Connect.git" aria-label="Open DocConnect GitHub repository"><i class="fab fa-github"></i></a>
+                                <a class="btn" href="https://doc-connect-self.vercel.app/"
+                                    aria-label="Open DocConnect live site"><i class="fa fa-external-link-alt"></i></a>
+                                <a class="btn" href="https://github.com/iabdul-rafay/Doc-Connect.git"
+                                    aria-label="Open DocConnect GitHub repository"><i class="fab fa-github"></i></a>
                             </div>
                         </div>
                     </div>
@@ -722,7 +755,8 @@
 
                 <!-- Featured Project 2: Brew & Bloom -->
                 <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-web wow fadeInUp" data-wow-delay="0.2s">
-                    <div class="portfolio-wrap project-trigger" data-project="brew-bloom" role="button" tabindex="0" aria-label="View Brew and Bloom project details">
+                    <div class="portfolio-wrap project-trigger" data-project="brew-bloom" role="button" tabindex="0"
+                        aria-label="View Brew and Bloom project details">
                         <div class="portfolio-img">
                             <img src="img/Brew&Bloom_Coffeeshop.png" alt="Brew and Bloom coffee shop platform">
                         </div>
@@ -732,8 +766,11 @@
                                 <span class="portfolio-status">In development · React</span>
                             </div>
                             <div class="portfolio-actions">
-                                <a class="btn" href="https://brewandbloom-vert.vercel.app/" aria-label="Open Brew and Bloom live site"><i class="fa fa-external-link-alt"></i></a>
-                                <a class="btn" href="https://github.com/iabdul-rafay/Brew-Bloom-Coffee-Shop" aria-label="Open Brew and Bloom GitHub repository"><i class="fab fa-github"></i></a>
+                                <a class="btn" href="https://brewandbloom-vert.vercel.app/"
+                                    aria-label="Open Brew and Bloom live site"><i
+                                        class="fa fa-external-link-alt"></i></a>
+                                <a class="btn" href="https://github.com/iabdul-rafay/Brew-Bloom-Coffee-Shop"
+                                    aria-label="Open Brew and Bloom GitHub repository"><i class="fab fa-github"></i></a>
                             </div>
                         </div>
                     </div>
@@ -741,7 +778,8 @@
 
                 <!-- Featured Project 3: Khastech Solutions -->
                 <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-web wow fadeInUp" data-wow-delay="0.4s">
-                    <div class="portfolio-wrap project-trigger" data-project="khastech" role="button" tabindex="0" aria-label="View Khastech Solutions project details">
+                    <div class="portfolio-wrap project-trigger" data-project="khastech" role="button" tabindex="0"
+                        aria-label="View Khastech Solutions project details">
                         <div class="portfolio-img">
                             <img src="img/khastech.com.png" alt="Khastech Solutions technology company website">
                         </div>
@@ -751,8 +789,11 @@
                                 <span class="portfolio-status">In development · Live</span>
                             </div>
                             <div class="portfolio-actions">
-                                <a class="btn" href="https://khastech.com" aria-label="Open Khastech Solutions live site"><i class="fa fa-external-link-alt"></i></a>
-                                <a class="btn" href="https://khastechcom.vercel.app/" aria-label="Open Khastech Solutions preview"><i class="fa fa-eye"></i></a>
+                                <a class="btn" href="https://khastech.com"
+                                    aria-label="Open Khastech Solutions live site"><i
+                                        class="fa fa-external-link-alt"></i></a>
+                                <a class="btn" href="https://khastechcom.vercel.app/"
+                                    aria-label="Open Khastech Solutions preview"><i class="fa fa-eye"></i></a>
                             </div>
                         </div>
                     </div>
@@ -760,7 +801,8 @@
 
                 <!-- Featured Project 4: myVISTA -->
                 <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-ai wow fadeInUp" data-wow-delay="0.6s">
-                    <div class="portfolio-wrap project-trigger" data-project="myvista" role="button" tabindex="0" aria-label="View myVISTA project details">
+                    <div class="portfolio-wrap project-trigger" data-project="myvista" role="button" tabindex="0"
+                        aria-label="View myVISTA project details">
                         <div class="portfolio-img">
                             <img src="img/My_VISTA_.png" alt="myVISTA smart home mobile application">
                         </div>
@@ -770,7 +812,8 @@
                                 <span class="portfolio-status">Mobile application · FYP</span>
                             </div>
                             <div class="portfolio-actions">
-                                <a class="btn" href="img/My_VISTA_.png" data-lightbox="portfolio" aria-label="View myVISTA project image"><i class="fa fa-search-plus"></i></a>
+                                <a class="btn" href="img/My_VISTA_.png" data-lightbox="portfolio"
+                                    aria-label="View myVISTA project image"><i class="fa fa-search-plus"></i></a>
                             </div>
                         </div>
                     </div>
@@ -778,7 +821,8 @@
 
                 <!-- Featured Project 5: Xaryab Mentorship -->
                 <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-web wow fadeInUp" data-wow-delay="0.8s">
-                    <div class="portfolio-wrap project-trigger" data-project="xaryab" role="button" tabindex="0" aria-label="View Xaryab Mentorship project details">
+                    <div class="portfolio-wrap project-trigger" data-project="xaryab" role="button" tabindex="0"
+                        aria-label="View Xaryab Mentorship project details">
                         <div class="portfolio-img">
                             <img src="img/xaryab_mentorship.png" alt="Xaryab Hashmi personal mentorship website">
                         </div>
@@ -788,7 +832,9 @@
                                 <span class="portfolio-status">Live</span>
                             </div>
                             <div class="portfolio-actions">
-                                <a class="btn" href="https://mentorship.vasilaglobal.com/" aria-label="Open Xaryab Mentorship live site"><i class="fa fa-external-link-alt"></i></a>
+                                <a class="btn" href="https://mentorship.vasilaglobal.com/"
+                                    aria-label="Open Xaryab Mentorship live site"><i
+                                        class="fa fa-external-link-alt"></i></a>
                             </div>
                         </div>
                     </div>
@@ -796,7 +842,8 @@
 
                 <!-- Featured Project 6: AI Tax Portal -->
                 <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-ai wow fadeInUp" data-wow-delay="1.0s">
-                    <div class="portfolio-wrap project-trigger" data-project="tax-portal" role="button" tabindex="0" aria-label="View AI Tax Portal project details">
+                    <div class="portfolio-wrap project-trigger" data-project="tax-portal" role="button" tabindex="0"
+                        aria-label="View AI Tax Portal project details">
                         <div class="portfolio-img">
                             <img src="img/ai_tax_portal.png" alt="AI Tax Portal dashboard">
                         </div>
@@ -806,8 +853,11 @@
                                 <span class="portfolio-status">Live · AI dashboard</span>
                             </div>
                             <div class="portfolio-actions">
-                                <a class="btn" href="https://ai-tax-portal.vercel.app/dashboard" aria-label="Open AI Tax Portal live site"><i class="fa fa-external-link-alt"></i></a>
-                                <a class="btn" href="https://github.com/iabdul-rafay/my-ai-tax-portal" aria-label="Open AI Tax Portal GitHub repository"><i class="fab fa-github"></i></a>
+                                <a class="btn" href="https://ai-tax-portal.vercel.app/dashboard"
+                                    aria-label="Open AI Tax Portal live site"><i
+                                        class="fa fa-external-link-alt"></i></a>
+                                <a class="btn" href="https://github.com/iabdul-rafay/my-ai-tax-portal"
+                                    aria-label="Open AI Tax Portal GitHub repository"><i class="fab fa-github"></i></a>
                             </div>
                         </div>
                     </div>
@@ -815,7 +865,8 @@
 
                 <!-- Featured Project 7: Paws and Co. -->
                 <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-web wow fadeInUp" data-wow-delay="1.2s">
-                    <div class="portfolio-wrap project-trigger" data-project="paws" role="button" tabindex="0" aria-label="View Paws and Co. project details">
+                    <div class="portfolio-wrap project-trigger" data-project="paws" role="button" tabindex="0"
+                        aria-label="View Paws and Co. project details">
                         <div class="portfolio-img">
                             <img src="img/PawsandCo..png" alt="Paws and Co. pet community platform">
                         </div>
@@ -825,8 +876,32 @@
                                 <span class="portfolio-status">In development · Live</span>
                             </div>
                             <div class="portfolio-actions">
-                                <a class="btn" href="https://paws-and-co-swart.vercel.app/" aria-label="Open Paws and Co. live site"><i class="fa fa-external-link-alt"></i></a>
-                                <a class="btn" href="https://github.com/iabdul-rafay/Paws-and-Co.-" aria-label="Open Paws and Co. GitHub repository"><i class="fab fa-github"></i></a>
+                                <a class="btn" href="https://paws-and-co-swart.vercel.app/"
+                                    aria-label="Open Paws and Co. live site"><i class="fa fa-external-link-alt"></i></a>
+                                <a class="btn" href="https://github.com/iabdul-rafay/Paws-and-Co.-"
+                                    aria-label="Open Paws and Co. GitHub repository"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Featured Project 8: Old Portfolio -->
+                <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-web wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="portfolio-wrap project-trigger" data-project="old-portfolio" role="button" tabindex="0"
+                        aria-label="View Old Portfolio project details">
+                        <div class="portfolio-img">
+                            <img src="img/old_portfolio.png" alt="Abdul Rafay old portfolio website">
+                        </div>
+                        <div class="portfolio-text">
+                            <div>
+                                <h3>Portfolio (v1)</h3>
+                                <span class="portfolio-status">My Old Portfolio</span>
+                            </div>
+                            <div class="portfolio-actions">
+                                <a class="btn" href="https://iabdul-rafay-portfolio.netlify.app/" target="_blank" rel="noopener noreferrer"
+                                    aria-label="Open Old Portfolio live site"><i class="fa fa-external-link-alt"></i></a>
+                                <a class="btn" href="https://github.com/iabdul-rafay" target="_blank" rel="noopener noreferrer"
+                                    aria-label="Open GitHub repository"><i class="fab fa-github"></i></a>
                             </div>
                         </div>
                     </div>
@@ -835,8 +910,8 @@
             <div class="portfolio-more text-center">
                 <a class="btn" href="projects.html">View More Projects <i class="fa fa-arrow-right ml-2"></i></a>
             </div>
-            </div>
         </div>
+    </div>
     </div>
     <!-- Portfolio End -->
 
@@ -883,272 +958,310 @@
                 <!-- Owl Carousel -->
                 <div class="owl-carousel certificates-carousel">
 
-                <!-- Certificate 1: ISPR Internship -->
+                    <!-- Certificate 1: ISPR Internship -->
 
                     <div class="cert-slide">
-                    <div class="certificate-item">
-                        <div class="certificate-img-container">
-                            <span class="certificate-badge">Completed (2026)</span>
-                            <img src="img/Certificatesimg/WhatsApp Image 2026-09-15 at 10.47.54 AM (1).jpeg" alt="ISPR Internship Certificate" class="img-fluid" style="width:100%;height:100%;object-fit:cover;">
+                        <div class="certificate-item">
+                            <div class="certificate-img-container">
+                                <span class="certificate-badge">Completed (2026)</span>
+                                <img src="img/Certificatesimg/WhatsApp Image 2026-09-15 at 10.47.54 AM (1).jpeg"
+                                    alt="ISPR Internship Certificate" class="img-fluid"
+                                    style="width:100%;height:100%;object-fit:cover;">
                                 <div class="cert-img-overlay"><i class="fa fa-search-plus"></i></div>
-                        </div>
-                        <div class="certificate-body">
-                            <div>
-                                <h3>ISPR — Internship Program</h3>
-                                <div class="issuer"><i class="fa fa-shield-alt mr-1"></i> Inter Services Public Relations (ISPR)</div>
-                                <p>
-                                    Successfully completed the Internship Program at ISPR from 29 July 2026 to 4 September 2026, as a student of Capital University of Science and Technology.
-                                </p>
                             </div>
-                            <div class="certificate-tags">
-                                <span class="certificate-tag">ISPR</span>
-                                <span class="certificate-tag">Internship</span>
-                                <span class="certificate-tag">CUST</span>
-                                <span class="certificate-tag">2026</span>
+                            <div class="certificate-body">
+                                <div>
+                                    <h3>ISPR — Internship Program</h3>
+                                    <div class="issuer"><i class="fa fa-shield-alt mr-1"></i> Inter Services Public
+                                        Relations (ISPR)</div>
+                                    <p>
+                                        Successfully completed the Internship Program at ISPR from 29 July 2026 to 4
+                                        September 2026, as a student of Capital University of Science and Technology.
+                                    </p>
+                                </div>
+                                <div class="certificate-tags">
+                                    <span class="certificate-tag">ISPR</span>
+                                    <span class="certificate-tag">Internship</span>
+                                    <span class="certificate-tag">CUST</span>
+                                    <span class="certificate-tag">2026</span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Certificate 2: EZITECH Data Science Internship -->
+                    <!-- Certificate 2: EZITECH Data Science Internship -->
 
                     <div class="cert-slide">
-                    <div class="certificate-item">
-                        <div class="certificate-img-container">
-                            <span class="certificate-badge">Completed (2025)</span>
-                            <img src="img/Certificatesimg/WhatsApp Image 2026-09-15 at 10.47.53 AM (1).jpeg" alt="EZITECH Data Science Internship Certificate" class="img-fluid" style="width:100%;height:100%;object-fit:cover;">
+                        <div class="certificate-item">
+                            <div class="certificate-img-container">
+                                <span class="certificate-badge">Completed (2025)</span>
+                                <img src="img/Certificatesimg/WhatsApp Image 2026-09-15 at 10.47.53 AM (1).jpeg"
+                                    alt="EZITECH Data Science Internship Certificate" class="img-fluid"
+                                    style="width:100%;height:100%;object-fit:cover;">
                                 <div class="cert-img-overlay"><i class="fa fa-search-plus"></i></div>
-                        </div>
-                        <div class="certificate-body">
-                            <div>
-                                <h3>Internship in Data Science</h3>
-                                <div class="issuer"><i class="fa fa-university mr-1"></i> EZITECH Institute</div>
-                                <p>
-                                    Eight-week internship (16-Jul-2025 to 16-Sep-2025). Projects include MovieSent Sentiment Analysis, HomeChef AI-Powered Assistant, and Skin Cancer Classification with CNN.
-                                </p>
                             </div>
-                            <div class="certificate-tags">
-                                <span class="certificate-tag">Data Science</span>
-                                <span class="certificate-tag">Machine Learning</span>
-                                <span class="certificate-tag">CNN</span>
-                                <span class="certificate-tag">AI</span>
+                            <div class="certificate-body">
+                                <div>
+                                    <h3>Internship in Data Science</h3>
+                                    <div class="issuer"><i class="fa fa-university mr-1"></i> EZITECH Institute</div>
+                                    <p>
+                                        Eight-week internship (16-Jul-2025 to 16-Sep-2025). Projects include MovieSent
+                                        Sentiment Analysis, HomeChef AI-Powered Assistant, and Skin Cancer
+                                        Classification with CNN.
+                                    </p>
+                                </div>
+                                <div class="certificate-tags">
+                                    <span class="certificate-tag">Data Science</span>
+                                    <span class="certificate-tag">Machine Learning</span>
+                                    <span class="certificate-tag">CNN</span>
+                                    <span class="certificate-tag">AI</span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Certificate 3: CUST Hackathon 2026 Achievement -->
+                    <!-- Certificate 3: CUST Hackathon 2026 Achievement -->
 
                     <div class="cert-slide">
-                    <div class="certificate-item">
-                        <div class="certificate-img-container">
-                            <span class="certificate-badge">Completed (2026)</span>
-                            <img src="img/Certificatesimg/WhatsApp Image 2026-09-15 at 10.47.54 AM (2).jpeg" alt="CUST Hackathon 2026 Certificate of Achievement" class="img-fluid" style="width:100%;height:100%;object-fit:cover;">
+                        <div class="certificate-item">
+                            <div class="certificate-img-container">
+                                <span class="certificate-badge">Completed (2026)</span>
+                                <img src="img/Certificatesimg/WhatsApp Image 2026-09-15 at 10.47.54 AM (2).jpeg"
+                                    alt="CUST Hackathon 2026 Certificate of Achievement" class="img-fluid"
+                                    style="width:100%;height:100%;object-fit:cover;">
                                 <div class="cert-img-overlay"><i class="fa fa-search-plus"></i></div>
-                        </div>
-                        <div class="certificate-body">
-                            <div>
-                                <h3>CUST Hackathon 2026 — Certificate of Achievement</h3>
-                                <div class="issuer"><i class="fa fa-trophy mr-1"></i> CAUSE Society / CUST Dept. of Software Engineering</div>
-                                <p>
-                                    Recognized for enthusiastic participation and commitment during CUST Hackathon 2026, held on 13 June 2026.
-                                </p>
                             </div>
-                            <div class="certificate-tags">
-                                <span class="certificate-tag">Hackathon</span>
-                                <span class="certificate-tag">Achievement</span>
-                                <span class="certificate-tag">CAUSE Society</span>
-                                <span class="certificate-tag">CUST</span>
+                            <div class="certificate-body">
+                                <div>
+                                    <h3>CUST Hackathon 2026 — Certificate of Achievement</h3>
+                                    <div class="issuer"><i class="fa fa-trophy mr-1"></i> CAUSE Society / CUST Dept. of
+                                        Software Engineering</div>
+                                    <p>
+                                        Recognized for enthusiastic participation and commitment during CUST Hackathon
+                                        2026, held on 13 June 2026.
+                                    </p>
+                                </div>
+                                <div class="certificate-tags">
+                                    <span class="certificate-tag">Hackathon</span>
+                                    <span class="certificate-tag">Achievement</span>
+                                    <span class="certificate-tag">CAUSE Society</span>
+                                    <span class="certificate-tag">CUST</span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Certificate 4: CUST Hackathon 2025 AI for Sustainable Future -->
+                    <!-- Certificate 4: CUST Hackathon 2025 AI for Sustainable Future -->
 
                     <div class="cert-slide">
-                    <div class="certificate-item">
-                        <div class="certificate-img-container">
-                            <span class="certificate-badge">Completed (2025)</span>
-                            <img src="img/Certificatesimg/WhatsApp Image 2026-09-15 at 10.47.55 AM.jpeg" alt="CUST Hackathon 2025 AI Certificate" class="img-fluid" style="width:100%;height:100%;object-fit:cover;">
+                        <div class="certificate-item">
+                            <div class="certificate-img-container">
+                                <span class="certificate-badge">Completed (2025)</span>
+                                <img src="img/Certificatesimg/WhatsApp Image 2026-09-15 at 10.47.55 AM.jpeg"
+                                    alt="CUST Hackathon 2025 AI Certificate" class="img-fluid"
+                                    style="width:100%;height:100%;object-fit:cover;">
                                 <div class="cert-img-overlay"><i class="fa fa-search-plus"></i></div>
-                        </div>
-                        <div class="certificate-body">
-                            <div>
-                                <h3>CUST Hackathon 2025 — AI for Sustainable Future</h3>
-                                <div class="issuer"><i class="fa fa-microchip mr-1"></i> AI Pakistan / CAUSE / CUST Faculty of Computing</div>
-                                <p>
-                                    Participation certificate for CUST Hackathon 2025 themed "AI for Sustainable Future", held on 17 May 2025.
-                                </p>
                             </div>
-                            <div class="certificate-tags">
-                                <span class="certificate-tag">Hackathon</span>
-                                <span class="certificate-tag">Artificial Intelligence</span>
-                                <span class="certificate-tag">Sustainability</span>
-                                <span class="certificate-tag">CUST</span>
+                            <div class="certificate-body">
+                                <div>
+                                    <h3>CUST Hackathon 2025 — AI for Sustainable Future</h3>
+                                    <div class="issuer"><i class="fa fa-microchip mr-1"></i> AI Pakistan / CAUSE / CUST
+                                        Faculty of Computing</div>
+                                    <p>
+                                        Participation certificate for CUST Hackathon 2025 themed "AI for Sustainable
+                                        Future", held on 17 May 2025.
+                                    </p>
+                                </div>
+                                <div class="certificate-tags">
+                                    <span class="certificate-tag">Hackathon</span>
+                                    <span class="certificate-tag">Artificial Intelligence</span>
+                                    <span class="certificate-tag">Sustainability</span>
+                                    <span class="certificate-tag">CUST</span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Certificate 5: CTD ICTP Physical Training -->
+                    <!-- Certificate 5: CTD ICTP Physical Training -->
 
                     <div class="cert-slide">
-                    <div class="certificate-item">
-                        <div class="certificate-img-container">
-                            <span class="certificate-badge">Completed</span>
-                            <img src="img/Certificatesimg/WhatsApp Image 2026-09-15 at 10.47.52 AM.jpeg" alt="CTD ICTP Certificate of Participation" class="img-fluid" style="width:100%;height:100%;object-fit:cover;">
+                        <div class="certificate-item">
+                            <div class="certificate-img-container">
+                                <span class="certificate-badge">Completed</span>
+                                <img src="img/Certificatesimg/WhatsApp Image 2026-09-15 at 10.47.52 AM.jpeg"
+                                    alt="CTD ICTP Certificate of Participation" class="img-fluid"
+                                    style="width:100%;height:100%;object-fit:cover;">
                                 <div class="cert-img-overlay"><i class="fa fa-search-plus"></i></div>
-                        </div>
-                        <div class="certificate-body">
-                            <div>
-                                <h3>CTD ICTP — Certificate of Participation</h3>
-                                <div class="issuer"><i class="fa fa-shield-alt mr-1"></i> Counter Terrorism Department ICTP, Islamabad Capital Territory Police</div>
-                                <p>
-                                    Recognized for dedication and commitment to physical training with law enforcement and active participation at CTD ICTP.
-                                </p>
                             </div>
-                            <div class="certificate-tags">
-                                <span class="certificate-tag">Law Enforcement</span>
-                                <span class="certificate-tag">CTD</span>
-                                <span class="certificate-tag">Physical Training</span>
+                            <div class="certificate-body">
+                                <div>
+                                    <h3>CTD ICTP — Certificate of Participation</h3>
+                                    <div class="issuer"><i class="fa fa-shield-alt mr-1"></i> Counter Terrorism
+                                        Department ICTP, Islamabad Capital Territory Police</div>
+                                    <p>
+                                        Recognized for dedication and commitment to physical training with law
+                                        enforcement and active participation at CTD ICTP.
+                                    </p>
+                                </div>
+                                <div class="certificate-tags">
+                                    <span class="certificate-tag">Law Enforcement</span>
+                                    <span class="certificate-tag">CTD</span>
+                                    <span class="certificate-tag">Physical Training</span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Certificate 6: ITP VIPS/FOP Volunteer -->
+                    <!-- Certificate 6: ITP VIPS/FOP Volunteer -->
 
                     <div class="cert-slide">
-                    <div class="certificate-item">
-                        <div class="certificate-img-container">
-                            <span class="certificate-badge">Completed</span>
-                            <img src="img/Certificatesimg/WhatsApp Image 2026-09-15 at 10.47.54 AM.jpeg" alt="ITP VIPS FOP Volunteer Certificate" class="img-fluid" style="width:100%;height:100%;object-fit:cover;">
+                        <div class="certificate-item">
+                            <div class="certificate-img-container">
+                                <span class="certificate-badge">Completed</span>
+                                <img src="img/Certificatesimg/WhatsApp Image 2026-09-15 at 10.47.54 AM.jpeg"
+                                    alt="ITP VIPS FOP Volunteer Certificate" class="img-fluid"
+                                    style="width:100%;height:100%;object-fit:cover;">
                                 <div class="cert-img-overlay"><i class="fa fa-search-plus"></i></div>
-                        </div>
-                        <div class="certificate-body">
-                            <div>
-                                <h3>Volunteer in Police Service — VIPS/FOP</h3>
-                                <div class="issuer"><i class="fa fa-user-shield mr-1"></i> Islamabad Traffic Police (ITP)</div>
-                                <p>
-                                    Recognized for dedicated service as a Volunteer in Police Services / Friends of Police, fostering community engagement and safety.
-                                </p>
                             </div>
-                            <div class="certificate-tags">
-                                <span class="certificate-tag">Community Service</span>
-                                <span class="certificate-tag">VIPS/FOP</span>
-                                <span class="certificate-tag">ITP</span>
+                            <div class="certificate-body">
+                                <div>
+                                    <h3>Volunteer in Police Service — VIPS/FOP</h3>
+                                    <div class="issuer"><i class="fa fa-user-shield mr-1"></i> Islamabad Traffic Police
+                                        (ITP)</div>
+                                    <p>
+                                        Recognized for dedicated service as a Volunteer in Police Services / Friends of
+                                        Police, fostering community engagement and safety.
+                                    </p>
+                                </div>
+                                <div class="certificate-tags">
+                                    <span class="certificate-tag">Community Service</span>
+                                    <span class="certificate-tag">VIPS/FOP</span>
+                                    <span class="certificate-tag">ITP</span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Certificate 7: CAUSE Society Videography Team -->
+                    <!-- Certificate 7: CAUSE Society Videography Team -->
 
                     <div class="cert-slide">
-                    <div class="certificate-item">
-                        <div class="certificate-img-container">
-                            <span class="certificate-badge">Completed (2025)</span>
-                            <img src="img/Certificatesimg/WhatsApp Image 2026-09-15 at 10.47.53 AM.jpeg" alt="CAUSE Society Videography Team Certificate" class="img-fluid" style="width:100%;height:100%;object-fit:cover;">
+                        <div class="certificate-item">
+                            <div class="certificate-img-container">
+                                <span class="certificate-badge">Completed (2025)</span>
+                                <img src="img/Certificatesimg/WhatsApp Image 2026-09-15 at 10.47.53 AM.jpeg"
+                                    alt="CAUSE Society Videography Team Certificate" class="img-fluid"
+                                    style="width:100%;height:100%;object-fit:cover;">
                                 <div class="cert-img-overlay"><i class="fa fa-search-plus"></i></div>
-                        </div>
-                        <div class="certificate-body">
-                            <div>
-                                <h3>Certificate of Achievement — Videography Team Member</h3>
-                                <div class="issuer"><i class="fa fa-video mr-1"></i> CAUSE Society, CUST</div>
-                                <p>
-                                    Recognized for selection and commitment as a Member of the Videography Team during Term — Fall 2025.
-                                </p>
                             </div>
-                            <div class="certificate-tags">
-                                <span class="certificate-tag">Videography</span>
-                                <span class="certificate-tag">CAUSE Society</span>
-                                <span class="certificate-tag">Achievement</span>
+                            <div class="certificate-body">
+                                <div>
+                                    <h3>Certificate of Achievement — Videography Team Member</h3>
+                                    <div class="issuer"><i class="fa fa-video mr-1"></i> CAUSE Society, CUST</div>
+                                    <p>
+                                        Recognized for selection and commitment as a Member of the Videography Team
+                                        during Term — Fall 2025.
+                                    </p>
+                                </div>
+                                <div class="certificate-tags">
+                                    <span class="certificate-tag">Videography</span>
+                                    <span class="certificate-tag">CAUSE Society</span>
+                                    <span class="certificate-tag">Achievement</span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Certificate 8: IEEE CUST AL-FUNOON GALA 2025 -->
+                    <!-- Certificate 8: IEEE CUST AL-FUNOON GALA 2025 -->
 
                     <div class="cert-slide">
-                    <div class="certificate-item">
-                        <div class="certificate-img-container">
-                            <span class="certificate-badge">Completed (2025)</span>
-                            <img src="img/Certificatesimg/WhatsApp Image 2026-09-15 at 10.47.52 AM (1).jpeg" alt="IEEE CUST AL-FUNOON GALA Certificate" class="img-fluid" style="width:100%;height:100%;object-fit:cover;">
+                        <div class="certificate-item">
+                            <div class="certificate-img-container">
+                                <span class="certificate-badge">Completed (2025)</span>
+                                <img src="img/Certificatesimg/WhatsApp Image 2026-09-15 at 10.47.52 AM (1).jpeg"
+                                    alt="IEEE CUST AL-FUNOON GALA Certificate" class="img-fluid"
+                                    style="width:100%;height:100%;object-fit:cover;">
                                 <div class="cert-img-overlay"><i class="fa fa-search-plus"></i></div>
-                        </div>
-                        <div class="certificate-body">
-                            <div>
-                                <h3>Certificate of Appreciation — AL-FUNOON GALA 2025</h3>
-                                <div class="issuer"><i class="fa fa-camera mr-1"></i> IEEE CUST Student Branch</div>
-                                <p>
-                                    Recognized as part of the Photography Team at IEEE CUST Student Branch AL-FUNOON GALA 2025, held on 16th June 2025.
-                                </p>
                             </div>
-                            <div class="certificate-tags">
-                                <span class="certificate-tag">IEEE</span>
-                                <span class="certificate-tag">Photography</span>
-                                <span class="certificate-tag">CUST</span>
-                                <span class="certificate-tag">2025</span>
+                            <div class="certificate-body">
+                                <div>
+                                    <h3>Certificate of Appreciation — AL-FUNOON GALA 2025</h3>
+                                    <div class="issuer"><i class="fa fa-camera mr-1"></i> IEEE CUST Student Branch</div>
+                                    <p>
+                                        Recognized as part of the Photography Team at IEEE CUST Student Branch AL-FUNOON
+                                        GALA 2025, held on 16th June 2025.
+                                    </p>
+                                </div>
+                                <div class="certificate-tags">
+                                    <span class="certificate-tag">IEEE</span>
+                                    <span class="certificate-tag">Photography</span>
+                                    <span class="certificate-tag">CUST</span>
+                                    <span class="certificate-tag">2025</span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Certificate 9: CUST Sports Week 2024 -->
+                    <!-- Certificate 9: CUST Sports Week 2024 -->
 
                     <div class="cert-slide">
-                    <div class="certificate-item">
-                        <div class="certificate-img-container">
-                            <span class="certificate-badge">Completed (2024)</span>
-                            <img src="img/Certificatesimg/WhatsApp Image 2026-09-15 at 10.47.53 AM (2).jpeg" alt="CUST Sports Week 2024 Certificate" class="img-fluid" style="width:100%;height:100%;object-fit:cover;">
+                        <div class="certificate-item">
+                            <div class="certificate-img-container">
+                                <span class="certificate-badge">Completed (2024)</span>
+                                <img src="img/Certificatesimg/WhatsApp Image 2026-09-15 at 10.47.53 AM (2).jpeg"
+                                    alt="CUST Sports Week 2024 Certificate" class="img-fluid"
+                                    style="width:100%;height:100%;object-fit:cover;">
                                 <div class="cert-img-overlay"><i class="fa fa-search-plus"></i></div>
-                        </div>
-                        <div class="certificate-body">
-                            <div>
-                                <h3>Certificate of Appreciation — Sports Week 2024</h3>
-                                <div class="issuer"><i class="fa fa-running mr-1"></i> Capital University of Science and Technology (CUST)</div>
-                                <p>
-                                    Awarded for the successful execution of CUST Sports Week 2024 by the Director of Student Affairs.
-                                </p>
                             </div>
-                            <div class="certificate-tags">
-                                <span class="certificate-tag">Sports</span>
-                                <span class="certificate-tag">Event Management</span>
-                                <span class="certificate-tag">CUST</span>
-                                <span class="certificate-tag">2024</span>
+                            <div class="certificate-body">
+                                <div>
+                                    <h3>Certificate of Appreciation — Sports Week 2024</h3>
+                                    <div class="issuer"><i class="fa fa-running mr-1"></i> Capital University of Science
+                                        and Technology (CUST)</div>
+                                    <p>
+                                        Awarded for the successful execution of CUST Sports Week 2024 by the Director of
+                                        Student Affairs.
+                                    </p>
+                                </div>
+                                <div class="certificate-tags">
+                                    <span class="certificate-tag">Sports</span>
+                                    <span class="certificate-tag">Event Management</span>
+                                    <span class="certificate-tag">CUST</span>
+                                    <span class="certificate-tag">2024</span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Certificate 10: CUST Orientation Spring 2025 -->
+                    <!-- Certificate 10: CUST Orientation Spring 2025 -->
 
                     <div class="cert-slide">
-                    <div class="certificate-item">
-                        <div class="certificate-img-container">
-                            <span class="certificate-badge">Completed (2025)</span>
-                            <img src="img/Certificatesimg/WhatsApp Image 2026-09-15 at 10.47.55 AM (1).jpeg" alt="CUST Orientation Spring 2025 Certificate" class="img-fluid" style="width:100%;height:100%;object-fit:cover;">
+                        <div class="certificate-item">
+                            <div class="certificate-img-container">
+                                <span class="certificate-badge">Completed (2025)</span>
+                                <img src="img/Certificatesimg/WhatsApp Image 2026-09-15 at 10.47.55 AM (1).jpeg"
+                                    alt="CUST Orientation Spring 2025 Certificate" class="img-fluid"
+                                    style="width:100%;height:100%;object-fit:cover;">
                                 <div class="cert-img-overlay"><i class="fa fa-search-plus"></i></div>
-                        </div>
-                        <div class="certificate-body">
-                            <div>
-                                <h3>Certificate of Appreciation — Orientation Spring 2025</h3>
-                                <div class="issuer"><i class="fa fa-university mr-1"></i> Capital University of Science and Technology (CUST)</div>
-                                <p>
-                                    Awarded to Mr. Abdul Rafay for the successful execution of Orientation Spring 2025, by the Director of Student Affairs.
-                                </p>
                             </div>
-                            <div class="certificate-tags">
-                                <span class="certificate-tag">Event Management</span>
-                                <span class="certificate-tag">Orientation</span>
-                                <span class="certificate-tag">CUST</span>
-                                <span class="certificate-tag">2025</span>
+                            <div class="certificate-body">
+                                <div>
+                                    <h3>Certificate of Appreciation — Orientation Spring 2025</h3>
+                                    <div class="issuer"><i class="fa fa-university mr-1"></i> Capital University of
+                                        Science and Technology (CUST)</div>
+                                    <p>
+                                        Awarded to Mr. Abdul Rafay for the successful execution of Orientation Spring
+                                        2025, by the Director of Student Affairs.
+                                    </p>
+                                </div>
+                                <div class="certificate-tags">
+                                    <span class="certificate-tag">Event Management</span>
+                                    <span class="certificate-tag">Orientation</span>
+                                    <span class="certificate-tag">CUST</span>
+                                    <span class="certificate-tag">2025</span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
 
                 </div><!-- /.owl-carousel.certificates-carousel -->
@@ -1188,10 +1301,12 @@
                                     style="background: #ffffff; color: #EF233C; box-shadow: none;"><i
                                         class="fab fa-github"></i> GitHub</a>
                                 <a href="https://www.linkedin.com/in/abdul-rafay-76b165320/" target="_blank"
-                                    class="btn btn-sm mr-2" style="background: #ffffff; color: #EF233C; box-shadow: none;"><i
+                                    class="btn btn-sm mr-2"
+                                    style="background: #ffffff; color: #EF233C; box-shadow: none;"><i
                                         class="fab fa-linkedin-in"></i> LinkedIn</a>
-                                <a href="https://www.upwork.com/freelancers/~0103571b9de9fb4c9f?mp_source=share" target="_blank"
-                                    class="btn btn-sm" style="background: #14a800; color: #ffffff; box-shadow: none; border-color: #14a800;"><i
+                                <a href="https://www.upwork.com/freelancers/~0103571b9de9fb4c9f?mp_source=share"
+                                    target="_blank" class="btn btn-sm"
+                                    style="background: #14a800; color: #ffffff; box-shadow: none; border-color: #14a800;"><i
                                         class="fas fa-briefcase"></i> Upwork</a>
                             </div>
                         </div>
@@ -1229,95 +1344,87 @@
     </div>
     <!-- Contact End -->
 
-
-    <!-- Blog Start -->
-    <div class="blog" id="blog">
-        <div class="container">
-            <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
-                <p>From My Blog</p>
-                <h2>Latest Tech Insights</h2>
-            </div>
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="blog-item wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="blog-img">
-                            <img src="img/blog-1.png" alt="Agentic AI">
-                        </div>
-                        <div class="blog-text">
-                            <h2>My Learning Journey in Machine Learning and AI</h2>
-                            <div class="blog-meta">
-                                <p><i class="far fa-user"></i>Abdul Rafay</p>
-                                <p><i class="far fa-list-alt"></i>Machine Learning & AI</p>
-                                <p><i class="far fa-calendar-alt"></i>Jan 2026</p>
-                            </div>
-                            <p>
-                                I am learning the foundations of machine learning and artificial intelligence, from data preparation and model training to understanding how intelligent systems solve real-world problems.
-                            </p>
-                            <a class="btn" href="#about">Read More <i class="fa fa-angle-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="blog-item wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="blog-img">
-                            <img src="img/blog-2.png" alt="MERN Stack">
-                        </div>
-                        <div class="blog-text">
-                            <h2>Building My Skills in Python for Software Development and AI</h2>
-                            <div class="blog-meta">
-                                <p><i class="far fa-user"></i>Abdul Rafay</p>
-                                <p><i class="far fa-list-alt"></i>Python Basics</p>
-                                <p><i class="far fa-calendar-alt"></i>Feb 2026</p>
-                            </div>
-                            <p>
-                                I am learning the foundations of Python for software development, from understanding programming fundamentals and writing clean, efficient code to building applications and solving real-world problems through practical software solutions.
-                            </p>
-                            <a class="btn" href="#about">Read More <i class="fa fa-angle-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Blog End -->
-
-
     <!-- Footer Start -->
-    <div class="footer wow fadeIn" data-wow-delay="0.3s" data-dark="1">
-        <div class="container-fluid">
-            <div class="container">
-                <div class="footer-info">
-                    <h2>Abdul Rafay</h2>
-                    <h3>Rawalpindi / Islamabad, Pakistan</h3>
-                    <div class="footer-menu">
-                        <p>+92 3195292295</p>
-                        <p>iamrafay64@gmail.com</p>
-                    </div>
-                    <div class="footer-social">
-                        <a href="https://github.com/iabdul-rafay" target="_blank" title="GitHub"><i
-                                class="fab fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/abdul-rafay-76b165320/" target="_blank" title="LinkedIn"><i
-                                class="fab fa-linkedin-in"></i></a>
-                        <a href="https://x.com/iabdul_rafay" target="_blank" title="Twitter / X"><i
-                                class="fab fa-twitter"></i></a>
-                        <a href="https://www.instagram.com/iabdul.rafay7" target="_blank" title="Instagram"><i
-                                class="fab fa-instagram"></i></a>
-                        <a href="https://www.threads.com/@iabdul.rafay7?hl=en" target="_blank" title="Threads"><i
-                                class="fas fa-at"></i></a>
-                        <a href="https://www.upwork.com/freelancers/~0103571b9de9fb4c9f?mp_source=share" target="_blank" title="Upwork" style="color: #14a800;"><i
-                                class="fas fa-briefcase"></i></a>
-                        <a href="https://www.facebook.com/a.r.407551" target="_blank" title="Facebook"><i
-                                class="fab fa-facebook-f"></i></a>
+    <footer class="footer-crazy wow fadeIn" data-wow-delay="0.2s">
+
+        <!-- Animated background orbs -->
+        <div class="footer-orb footer-orb-1"></div>
+        <div class="footer-orb footer-orb-2"></div>
+        <div class="footer-orb footer-orb-3"></div>
+
+        <div class="footer-crazy-inner">
+
+            <!-- Top divider beam -->
+            <div class="footer-beam"></div>
+
+            <!-- Brand block -->
+            <div class="footer-brand">
+                <div class="footer-brand-name">Abdul Rafay</div>
+                <div class="footer-brand-tag">Full‑Stack Developer &amp; AI Enthusiast</div>
+                <div class="footer-brand-location">
+                    <i class="fas fa-map-marker-alt"></i>&nbsp; Rawalpindi / Islamabad, Pakistan
+                </div>
+            </div>
+
+            <!-- Three column grid -->
+            <div class="footer-grid">
+
+                <!-- Column 1 – Contact -->
+                <div class="footer-col">
+                    <h4 class="footer-col-title"><i class="fas fa-satellite-dish"></i> Contact</h4>
+                    <a class="footer-col-link" href="tel:+923195292295">
+                        <i class="fas fa-phone-alt"></i> +92 319 529 2295
+                    </a>
+                    <a class="footer-col-link" href="mailto:iamrafay64@gmail.com">
+                        <i class="fas fa-envelope"></i> iamrafay64@gmail.com
+                    </a>
+                </div>
+
+                <!-- Column 2 – Quick links -->
+                <div class="footer-col">
+                    <h4 class="footer-col-title"><i class="fas fa-bolt"></i> Quick Links</h4>
+                    <a class="footer-col-link" href="#about"><i class="fas fa-chevron-right"></i> About</a>
+                    <a class="footer-col-link" href="#skill"><i class="fas fa-chevron-right"></i> Skills</a>
+                    <a class="footer-col-link" href="#portfolio"><i class="fas fa-chevron-right"></i> Portfolio</a>
+                    <a class="footer-col-link" href="#contact"><i class="fas fa-chevron-right"></i> Contact</a>
+                </div>
+
+                <!-- Column 3 – Social -->
+                <div class="footer-col">
+                    <h4 class="footer-col-title"><i class="fas fa-share-alt"></i> Socials</h4>
+                    <div class="footer-social-crazy">
+                        <a href="https://github.com/iabdul-rafay" target="_blank" title="GitHub" class="fsoc-btn fsoc-github"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/abdul-rafay-76b165320/" target="_blank" title="LinkedIn" class="fsoc-btn fsoc-linkedin"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://x.com/iabdul_rafay" target="_blank" title="X / Twitter" class="fsoc-btn fsoc-twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/iabdul.rafay7" target="_blank" title="Instagram" class="fsoc-btn fsoc-instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.threads.com/@iabdul.rafay7?hl=en" target="_blank" title="Threads" class="fsoc-btn fsoc-threads"><i class="fas fa-at"></i></a>
+                        <a href="https://www.upwork.com/freelancers/~0103571b9de9fb4c9f?mp_source=share" target="_blank" title="Upwork" class="fsoc-btn fsoc-upwork"><i class="fas fa-briefcase"></i></a>
+                        <a href="https://www.facebook.com/a.r.407551" target="_blank" title="Facebook" class="fsoc-btn fsoc-facebook"><i class="fab fa-facebook-f"></i></a>
                     </div>
                 </div>
             </div>
-            <div class="container copyright">
+
+            <!-- Bottom bar with inline SVG badge -->
+            <div class="footer-bottom">
                 <p>&copy; 2026 <a href="#home">Abdul Rafay</a>. All Rights Reserved.</p>
+                <a href="https://visitorbadge.io/status?path=https%3A%2F%2Fiabdul-rafay.github.io" target="_blank" title="Visitor Badge">
+                    <img
+                        src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fiabdul-rafay.github.io&amp;label=VISITORS&amp;labelColor=%230a0a0f&amp;countColor=%23ef233c&amp;style=flat"
+                        alt="Visitor count badge"
+                        class="visitor-svg-badge"
+                    />
+                </a>
             </div>
         </div>
-    </div>
+    </footer>
     <!-- Footer End -->
 
+
+    <!-- Theme Toggle Button -->
+    <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark/light mode" title="Toggle dark/light mode">
+        <span class="theme-icon theme-icon-moon">&#9790;</span>
+        <span class="theme-icon theme-icon-sun" style="display:none">&#9728;</span>
+    </button>
 
     <!-- Back to top button -->
     <a href="#" class="btn back-to-top"><i class="fa fa-chevron-up"></i></a>
@@ -1344,7 +1451,8 @@
             <img id="certLightboxImg" src="" alt="Certificate">
             <div class="cert-lightbox-caption" id="certLightboxCaption"></div>
         </div>
-        <button class="cert-lightbox-close" id="certLightboxClose" aria-label="Close" onclick="closeCertLightbox()" type="button">
+        <button class="cert-lightbox-close" id="certLightboxClose" aria-label="Close" onclick="closeCertLightbox()"
+            type="button">
             <i class="fa fa-times"></i>
         </button>
     </div>
